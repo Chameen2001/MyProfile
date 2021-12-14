@@ -1,0 +1,81 @@
+@media screen and (max-width:700px) {
+    .hero-text{
+        top: 40vh;
+        left: 20vw;
+        z-index: 1;
+    }
+
+    #heyIts {
+        font-size: 20px;
+        opacity: 60%;
+        margin-bottom: 5px;
+    }
+    
+    #name {
+        font-size: 30px;
+        opacity: 90%;
+        /* background: -webkit-linear-gradient(45deg, rgba(244,197,58,1) 20%, rgba(0,247,99,1) 30%, rgba(255,0,57,1) 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; */
+        width: 60vw;
+    }
+    
+    #fullStack {
+        font-size: 10px;
+        opacity: 60%;
+        width: 80vw;
+    }
+
+    .hero-image img {
+    
+        width: 50vw;
+        height: 100vh;
+        float: right;
+        object-fit: cover;
+        object-position: 75% 0%;
+        z-index: -99;
+    
+    }
+
+    .left-bar-container>nav{
+        flex-grow: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        row-gap: 20px;
+        opacity: 80%;
+    }
+    
+    .logo {
+        margin-top: 20px;
+        font-family: 'Jost', sans-serif;
+        font-size: 30px;
+        list-style: none;
+        display: flex;
+    }
+    
+    .social-media-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+    }
+    
+    .social-media-links li img {
+        object-fit: cover;
+        width: 25px;
+    }
+    
+    #vertical-line {
+        border-left: 2px solid white;
+        height: 150px;
+        margin-bottom: 30px;
+    }
+
+    
+}
+
+/*----------------------------------*/
+
+

@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body section {
+  z-index: -1;
+}
+
+/* //////////////////////////   Main Four Color Box   /////////////////////////////////// */
+
+body section:nth-child(1) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #ff111f;
+  width: 50vw;
+  height: 50vh;
+}
+
+body section:nth-child(2) {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #006c11;
+  width: 50vw;
+  height: 50vh;
+}
+
+body section:nth-child(3) {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #ffa42d;
+  width: 50vw;
+  height: 50vh;
+}
+
+body section:nth-child(4) {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #fd3095;
+  width: 50vw;
+  height: 50vh;
+}
+
+/* ///////////////////////    Quarter and Half Circles//////////////////////////////////// */
+
+body > div {
+  background-color: white;
+  width: 15vw;
+  height: 15vw;
+}
+
+body > div:nth-child(5) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0 0 100% 0;
+}
+
+body > div:nth-child(6) {
+  top: 0;
+  margin: auto;
+  border-radius: 0px 0px 100vw 100vw;
+  height: 10vw;
+  width: 20vw;
+}
+
+body > div:nth-child(7) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 0 0 100%;
+}
+
+body > div:nth-child(8) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100% 0 0;
+}
+
+body > div:nth-child(9) {
+  position: absolute;
+  margin-left: -10vw;
+  bottom: 0px;
+  left: 50%;
+  border-radius: 100vw 100vw 0 0;
+  height: 10vw;
+  width: 20vw;
+}
+
+body > div:nth-child(10) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 100% 0 0 0;
+}
+
+/* //////////////////////   4 Middle White Circle   ////////////////////////////////// */
+
+body>section>div{
+    width: 22vw;
+    height: 22vw;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    margin-top: -11vw;
+    left: 50%;
+    margin-left: -11vw;
+    border-radius: 100%;
+}
+
+/* ///////////////////////    4 Middle Red Box of 4 Middle White Circle ///////////////////////////////////////////// */
+
+body>section>div>div{
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    top: 50%;
+    margin-top: -5vw;
+    left: 50%;
+    margin-left: -5vw;
+    background-color: red;
+}
+
+/* /////////////////////////    Middle White Box    ///////////////////////////////////////// */
+
+body>section:nth-child(11){
+    position: absolute;
+    width: 22vw;
+    height: 22vw;
+    background-color: white;
+    left: 50%;
+    margin-left: -11vw;
+    top: 50%;
+    margin-top: -11vw;
+    
+}
+
+/* /////////////////////////    Middle Red Circle Of Middle White Box    ///////////////////////////////////////// */
+
+body>section:nth-child(11)>div{
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    background-color: red;
+    border-radius: 100%;
+    left: 50%;
+    margin-left: -7.5vw;
+    top: 50%;
+    margin-top: -7.5vw;
+}
