@@ -84,7 +84,6 @@ body>main>section{
 body>main>section>section:nth-child(1){
     text-align: center;
     padding-top: 10px;
-    border: 1px dotted red;
 }
 
 body>main>section>section:nth-child(2){
