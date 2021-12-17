@@ -68,3 +68,22 @@ section:nth-child(2)>div{
 
     z-index: -1;
 }
+
+section:nth-child(3)>div{
+    background-color: #ff635a;
+    border-radius: 100%;
+    width: 11.5vw;
+    height: 11.5vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: white;
+    font-size: 1.3vw;
+    font-weight: 500;
+    font-family: Ubuntu;
+
+    z-index: -1;
+}
