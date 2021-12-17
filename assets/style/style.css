@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: #0c0c0c;
 }
 
 .left-bar-container {
@@ -50,25 +50,6 @@ body {
 .social-media-links li img:hover {
   transform: scale(1.4);
   transition: 300ms;
-}
-
-.social-media-links li img {
-  transition: 600ms;
-  animation-name: social;
-  animation-duration: 500ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-delay: 2000ms;
-  animation-direction: alternate;
-}
-
-@keyframes social {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: rotateZ(45deg) scale(1.4);
-  }
 }
 
 #vertical-line {
@@ -152,4 +133,53 @@ body {
   width: 40px;
   height: 5px;
   border-radius: 15px;
+}
+
+
+/* --------------------------------------------------------------- */
+
+
+.about{
+  position: relative;
+  border: 1px solid red;
+}
+
+.about #myPhoto>img{
+  width: 200px;
+  position: absolute;
+  right: 15vw;
+  top: 40vh;
+  box-shadow: 20px 20px 1px 1px #4091BF;
+}
+
+.about>section:nth-child(1){
+  margin-top: 100px;
+  position: relative;
+  margin-left: 300px; 
+}
+
+#about_title_vertical_line{
+  position: absolute;
+  border-top: 1px solid white;
+  width: 100px;
+  left: 250px;
+  top: 25px;
+}
+
+#about_title{
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
+  
+}
+
+#about_paragraph{
+  width: 40vw;
+  margin-top: 100px;
+}
+
+#about_paragraph>p{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 23px;
+  color: #4091BF;
+  line-height: 35px;
 }
