@@ -42,14 +42,13 @@ body {
   margin-bottom: 10px;
 }
 
-.social-media-links li img {
-  object-fit: cover;
-  width: 40px;
-}
-
-.social-media-links li img:hover {
+.social-media-links li i:hover {
   transform: scale(1.4);
   transition: 300ms;
+}
+
+.social-media-links li i{
+  font-size: 30px;
 }
 
 #vertical-line {
@@ -115,7 +114,7 @@ body {
 /* -------------------------  Menu Icon -------------------------------- */
 
 .right-side-bar{
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   right: 40px;
   top: 50px;
@@ -141,21 +140,35 @@ body {
 
 .about{
   position: relative;
-  border: 1px solid red;
+  min-height: 100vh;
+  
 }
 
-.about #myPhoto>img{
-  width: 200px;
+.about_photo_section{
   position: absolute;
   right: 15vw;
   top: 40vh;
-  box-shadow: 20px 20px 1px 1px #4091BF;
 }
 
-.about>section:nth-child(1){
-  margin-top: 100px;
+.about_photo_section>img{
+  width: 200px;
+  z-index: 2;
+}
+
+#image_border{
+  position: absolute;
+  border: 5px solid #4091BF;
+  width: 200px;
+  height:260px;
+  top: 20px;
+  left: 25px;
+  z-index: -1;
+}
+
+.about_title_and_paragraph{
+  margin-top: 30vh;
   position: relative;
-  margin-left: 300px; 
+  margin-left: 15vw; 
 }
 
 #about_title_vertical_line{
