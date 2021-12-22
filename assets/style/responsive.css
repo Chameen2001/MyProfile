@@ -30,9 +30,8 @@
     
         width: 50vw;
         height: 100vh;
-        float: right;
         object-fit: cover;
-        object-position: 75% 0%;
+        object-position: 68% 0%;
         z-index: -99;
     
     }
@@ -62,10 +61,6 @@
         row-gap: 5px;
     }
     
-    .social-media-links li img {
-        object-fit: cover;
-        width: 25px;
-    }
     
     #vertical-line {
         border-left: 2px solid white;
