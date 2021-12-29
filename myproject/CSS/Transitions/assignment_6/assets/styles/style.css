@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+
+section{
+    
+    width: 13vw;
+    height: 60vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    left: -190px;
+}
+
+section>div{
+    position: relative;
+    background-color: #74b9ff;
+    height: 5vh;
+    
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 20px;
+    left: 0;
+    transition-property: left;
+    transition-duration: 500ms;
+    border-radius: 15px;
+
+}
+
+section>div>i{
+    font-size: 30px;
+    position: absolute;
+    right: 10px;
+    color: black;
+
+}
+
+section>div:hover{
+    left: 180px;
+    transition-property: left;
+    transition-duration: 500ms;
+}
