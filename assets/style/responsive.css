@@ -1,4 +1,4 @@
-@media screen and (max-width:700px) {
+@media screen and (max-width:425px) {
     .hero-text{
         top: 40vh;
         left: 20vw;
@@ -28,7 +28,7 @@
 
     .hero-image img {
     
-        width: 50vw;
+        width: 100vw;
         height: 100vh;
         object-fit: cover;
         object-position: 68% 0%;
@@ -68,9 +68,56 @@
         margin-bottom: 30px;
     }
 
+    /* ----------------------------------------------- */
+
+    
+
     
 }
 
+@media all and (min-width: 425px) and (max-width: 768px){
+
+    .hero-text{
+        top: 55vh;
+        left: 20vw;
+        z-index: 1;
+        width: fit-content;
+    }
+
+    #heyIts {
+        font-size: 20px;
+        opacity: 60%;
+        width: fit-content;
+    }
+    
+    #name {
+        font-size: 40px;
+        opacity: 90%;
+        /* background: -webkit-linear-gradient(45deg, rgba(244,197,58,1) 20%, rgba(0,247,99,1) 30%, rgba(255,0,57,1) 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; */
+        width: fit-content;
+    }
+    
+    #fullStack {
+        font-size: 10px;
+        opacity: 60%;
+        line-height: 18px;
+        width: fit-content;
+    }
+
+    .hero-image img {
+    
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        object-position: 68% 0%;
+        z-index: -99;
+    
+    }
+
+
+}
 /*----------------------------------*/
 
 
