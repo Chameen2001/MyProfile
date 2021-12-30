@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+
+section {
+  background-color: aquamarine;
+  width: 10vw;
+  height: 10vh;
+  border: 2px solid white;
+  border-radius: 15px;
+  position: absolute;
+  animation-name: box;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes box {
+  0% {
+    top: 10vh;
+    left: 10vw;
+    transform: rotate(0deg);
+    background-color: aquamarine;
+  }
+
+  40% {
+    top: 10vh;
+    left: 80vw;
+    transform: rotate(-180deg);
+    background-color: blue;
+  }
+
+  60% {
+    top: 80vh;
+    left: 80vw;
+    transform: rotate(-360deg);
+    background-color: blueviolet;
+  }
+
+  80% {
+    top: 80vh;
+    left: 10vw;
+    transform: rotate(-540deg);
+    background-color: chartreuse;
+  }
+
+  100% {
+    top: 10vh;
+    left: 10vw;
+    transform: rotate(-720deg);
+    background-color: aquamarine;
+  }
+}
