@@ -63,7 +63,7 @@ body {
 }
 
 .left-bar-container > nav {
-  flex-grow: 2;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -92,10 +92,11 @@ body {
   width: 50vw;
   background-color: #0c0c0c;
   animation-name: hero_image;
-  animation-duration: 3s;
+  animation-duration: 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   z-index: 0;
+  animation-timing-function: linear;
 }
 
 .hero-image img {
@@ -112,12 +113,18 @@ body {
   font-family: "Open Sans", sans-serif;
   top: 60vh;
   left: 15vw;
+  animation-name: hero-text;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
 
 #heyIts {
   font-size: 20px;
   opacity: 60%;
   margin-bottom: 5px;
+  animation-name: hey-its;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
 
 #name {
@@ -126,13 +133,20 @@ body {
   /* background: -webkit-linear-gradient(45deg, rgba(244,197,58,1) 20%, rgba(0,247,99,1) 30%, rgba(255,0,57,1) 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
+  animation-name: name;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
 
 #fullStack {
   font-size: 15px;
   opacity: 60%;
   line-height: 25px;
+  animation-name: full-stack;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
+
 
 /* -------------------------  Menu Icon -------------------------------- */
 
@@ -152,7 +166,7 @@ body {
 
 .right-side-bar .menu-icon div{
   background-color: white;
-  width: 40px;
+  width: 35px;
   height: 5px;
   border-radius: 15px;
 }

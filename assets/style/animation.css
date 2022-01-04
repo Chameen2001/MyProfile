@@ -1,23 +1,68 @@
-@keyframes social_media_link{
-    0%{
-      transform: scale(1.0);
-    }
-  
-    90%{
-      transform: scale(1.0);
-    }
-  
-    100%{
-      transform: scale(1.2);
-    }
+@keyframes social_media_link {
+  0% {
+    transform: scale(1);
   }
 
-  @keyframes hero_image{
-    from{
-      height: 100vh;
-    }
-  
-    to{
-      height: 0vh;
-    }
+  90% {
+    transform: scale(1);
   }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes hero_image {
+  from {
+    height: 100vh;
+  }
+
+  to {
+    height: 0vh;
+  }
+}
+
+@keyframes hero-text {
+  from {
+    top: 40vh;
+    left: 25vw;
+  }
+
+  to {
+    top: 60vh;
+    left: 15vw;
+  }
+}
+
+@keyframes hey-its {
+  from {
+    font-size: 5px;
+    
+  }
+
+  to {
+    font-size: 20px;
+  }
+}
+
+@keyframes name {
+  from {
+    font-size: 5px;
+    
+  }
+
+  to {
+    font-size: 50px;
+  }
+}
+
+@keyframes full-stack {
+  from {
+    font-size: 5px;
+    
+  }
+
+  to {
+    font-size: 15px;
+  }
+}
