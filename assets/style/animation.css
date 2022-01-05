@@ -37,7 +37,6 @@
 @keyframes hey-its {
   from {
     font-size: 5px;
-    
   }
 
   to {
@@ -48,7 +47,6 @@
 @keyframes name {
   from {
     font-size: 5px;
-    
   }
 
   to {
@@ -59,10 +57,39 @@
 @keyframes full-stack {
   from {
     font-size: 5px;
-    
   }
 
   to {
     font-size: 15px;
+  }
+}
+
+@keyframes left-bar-container {
+  0% {
+    opacity: 0%;
+  }
+
+  50% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes logo {
+  0% {
+    top: 50vh;
+    left: 50vw;
+    font-size: 100px;
+    margin: 0;
+  }
+
+  100% {
+    top: 20px;
+    left: 18px;
+    font-size: 40px;
+    margin: 0;
   }
 }

@@ -9,21 +9,21 @@ body {
   background-color: #0c0c0c;
 }
 
-.left-bar-container {
-  z-index: 2;
-  padding-left: 3vw;
-  position: fixed;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 .logo {
-  margin-top: 50px;
+  position: absolute;
   font-family: "Jost", sans-serif;
-  font-size: 48px;
+  font-size: 40px;
   list-style: none;
   display: flex;
+  width: fit-content;
+  height: fit-content;
+  left: 18px;
+  top: 20px;
+  margin: 0;
+
+  animation-name: logo;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
 }
 
 .logo li:nth-child(1) {
@@ -34,17 +34,35 @@ body {
   color: #8fae37;
 }
 
+.left-bar-container{
+  z-index: 2;
+  position: fixed;
+  left: 30px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  animation-name: left-bar-container;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  
+}
+
+.left-bar-container>nav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+  
+}
+
 .social-media-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: 15px;
   margin-bottom: 10px;
-}
 
-.social-media-links li i:hover {
-  transform: scale(1.4);
-  transition: 300ms;
 }
 
 .social-media-links li i{
@@ -55,6 +73,10 @@ body {
   animation-direction: alternate;
 }
 
+.social-media-links li i:hover {
+  transform: scale(1.4);
+  transition: 300ms;
+}
 
 #vertical-line {
   border-left: 3px solid white;
@@ -62,14 +84,6 @@ body {
   margin-bottom: 20px;
 }
 
-.left-bar-container > nav {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  opacity: 80%;
-}
 
 .main-viewport {
   z-index: 1;
@@ -184,7 +198,7 @@ body {
 .about_photo_section{
   position: absolute;
   right: 15vw;
-  top: 40vh;
+  top: 30vh;
 }
 
 .about_photo_section>img{
