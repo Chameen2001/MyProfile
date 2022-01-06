@@ -15,11 +15,18 @@ body {
   font-size: 40px;
   list-style: none;
   display: flex;
-  width: fit-content;
-  height: fit-content;
-  left: 18px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 70px;
+  height: 70px;
+
+  left: 10px;
   top: 20px;
   margin: 0;
+  
+  z-index: 100;
 
   animation-name: logo;
   animation-duration: 3s;
@@ -43,9 +50,9 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   animation-name: left-bar-container;
-  animation-duration: 3s;
+  animation-duration: 6s;
   animation-iteration-count: 1;
-  
+
 }
 
 .left-bar-container>nav{
@@ -53,7 +60,7 @@ body {
   flex-direction: column;
   align-items: center;
   row-gap: 15px;
-  
+
 }
 
 .social-media-links {
@@ -89,12 +96,14 @@ body {
   z-index: 1;
   position: relative;
   height: 100vh;
+  overflow: hidden;
 }
 
 .hero-image {
   position: absolute;
   right: 0;
   top: 0;
+  height: 100vh;
 }
 
 .hero-image::after{
@@ -106,7 +115,7 @@ body {
   width: 50vw;
   background-color: #0c0c0c;
   animation-name: hero_image;
-  animation-duration: 1s;
+  animation-duration: 4.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   z-index: 0;
@@ -118,7 +127,7 @@ body {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  
+
 }
 
 .hero-text {
@@ -128,8 +137,9 @@ body {
   top: 60vh;
   left: 15vw;
   animation-name: hero-text;
-  animation-duration: 1s;
+  animation-duration: 5s;
   animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);;
 }
 
 #heyIts {
@@ -170,6 +180,9 @@ body {
   right: 40px;
   top: 50px;
   opacity: 80%;
+  animation-name: right-side-bar;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
 }
 
 .right-side-bar .menu-icon{
@@ -192,7 +205,16 @@ body {
 .about{
   position: relative;
   min-height: 100vh;
-  
+  animation-name: about;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+
+}
+
+.about_title_and_paragraph{
+  margin-top: 30vh;
+  position: relative;
+  margin-left: 15vw;
 }
 
 .about_photo_section{
@@ -216,11 +238,7 @@ body {
   z-index: -1;
 }
 
-.about_title_and_paragraph{
-  margin-top: 30vh;
-  position: relative;
-  margin-left: 15vw; 
-}
+
 
 #about_title_vertical_line{
   position: absolute;
@@ -233,7 +251,7 @@ body {
 #about_title{
   font-size: 30px;
   font-family: 'Open Sans', sans-serif;
-  
+
 }
 
 #about_paragraph{
