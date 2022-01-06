@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+.sec{
+  padding: 2rem 0px;
+}
+
 body {
   background-color: #0c0c0c;
 }
@@ -92,7 +96,7 @@ body {
 }
 
 
-.main-viewport {
+#main-viewport {
   z-index: 1;
   position: relative;
   height: 100vh;
@@ -199,31 +203,77 @@ body {
 }
 
 
-/* --------------------------------------------------------------- */
+/* -----------------------------about---------------------------------- */
 
 
-.about{
+#about{
   position: relative;
   min-height: 100vh;
   animation-name: about;
   animation-duration: 6s;
   animation-iteration-count: 1;
+  border: 1px solid red;
 
 }
 
-.about_title_and_paragraph{
-  margin-top: 30vh;
+.about-wrap{
+  min-height: 100%;
   position: relative;
-  margin-left: 15vw;
+  min-height: 100%;
+  max-width: 75%;
+  box-sizing: border-box;
+  margin: 0px auto;
+  border: 1px solid rebeccapurple;
+  
+}
+
+#about_title{
+  position: relative;
+  width: fit-content;
+  left: -2rem;
+  font-size: 2rem;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+#about_title_vertical_line{
+  position: absolute;
+  border-top: 2px solid white;
+  width: 100px;
+  right: -130px;
+  top: 30px;
+}
+
+.about_title_and_photo{
+  border: 1px solid red;
+  display: flex;
+}
+
+#about_paragraph{
+  border: 1px solid green;
+  max-width: 700px;
+}
+
+#about_paragraph>p{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.3rem;
+  color: #4091BF;
+  line-height: 35px;
 }
 
 .about_photo_section{
-  position: absolute;
-  right: 15vw;
-  top: 30vh;
+  position: relative;
+  flex-grow: 1;
+  border: 1px solid #8fae37;
 }
 
 .about_photo_section>img{
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
   width: 200px;
   z-index: 2;
 }
@@ -239,29 +289,26 @@ body {
 }
 
 
+/*-------------------------------------My Project------------------------------*/
 
-#about_title_vertical_line{
+.my-project{
+  position: relative;
+  min-height: 100vh;
+}
+
+#my-prject-title{
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  top: 30vh;
+  position: absolute;
+  left: 15vw;
+}
+
+#my-project-vertical-line{
   position: absolute;
   border-top: 1px solid white;
   width: 100px;
-  left: 250px;
+  right: -140px;
   top: 25px;
-}
-
-#about_title{
-  font-size: 30px;
-  font-family: 'Open Sans', sans-serif;
-
-}
-
-#about_paragraph{
-  width: 40vw;
-  margin-top: 100px;
-}
-
-#about_paragraph>p{
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 23px;
-  color: #4091BF;
-  line-height: 35px;
 }
