@@ -212,24 +212,24 @@ body {
   animation-name: about;
   animation-duration: 6s;
   animation-iteration-count: 1;
-  border: 1px solid red;
 
 }
 
 .about-wrap{
-  min-height: 100%;
+  
   position: relative;
-  min-height: 100%;
   max-width: 75%;
   box-sizing: border-box;
-  margin: 0px auto;
-  border: 1px solid rebeccapurple;
+  margin: 5rem auto 0px auto;
+  display: flex;
+  flex-direction: column;
   
 }
 
 #about_title{
   position: relative;
   width: fit-content;
+  height: 10rem;
   left: -2rem;
   font-size: 2rem;
   font-family: 'Open Sans', sans-serif;
@@ -244,14 +244,14 @@ body {
   top: 30px;
 }
 
-.about_title_and_photo{
-  border: 1px solid red;
+.about_paragraph_and_photo{
+  flex-grow: 1;
+  position: relative;
   display: flex;
 }
 
 #about_paragraph{
-  border: 1px solid green;
-  max-width: 700px;
+  max-width: 60%;
 }
 
 #about_paragraph>p{
@@ -264,34 +264,38 @@ body {
 .about_photo_section{
   position: relative;
   flex-grow: 1;
-  border: 1px solid #8fae37;
+  
 }
 
-.about_photo_section>img{
+#about-photo{
   position: absolute;
   margin: auto;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 200px;
+  width: fit-content;
+  height: fit-content;
   z-index: 2;
 }
 
-#image_border{
+#about-photo::after{
   position: absolute;
-  border: 5px solid #4091BF;
-  width: 200px;
-  height:260px;
+  left: 20px;
   top: 20px;
-  left: 25px;
+  content: 'aaa';
+  border: 5px solid #4091BF;
+  width: 230px;
+  height:295px;
   z-index: -1;
+
 }
+
 
 
 /*-------------------------------------My Project------------------------------*/
 
-.my-project{
+#my-project{
   position: relative;
   min-height: 100vh;
 }
