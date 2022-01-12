@@ -5,7 +5,7 @@
   padding: 0;
 }
 
-.sec{
+.sec {
   padding: 2rem 0px;
 }
 
@@ -29,7 +29,7 @@ body {
   left: 10px;
   top: 20px;
   margin: 0;
-  
+
   z-index: 100;
 
   animation-name: logo;
@@ -45,7 +45,7 @@ body {
   color: #8fae37;
 }
 
-.left-bar-container{
+.left-bar-container {
   z-index: 2;
   position: fixed;
   left: 30px;
@@ -56,15 +56,13 @@ body {
   animation-name: left-bar-container;
   animation-duration: 6s;
   animation-iteration-count: 1;
-
 }
 
-.left-bar-container>nav{
+.left-bar-container > nav {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 15px;
-
 }
 
 .social-media-links {
@@ -73,10 +71,9 @@ body {
   flex-direction: column;
   row-gap: 15px;
   margin-bottom: 10px;
-
 }
 
-.social-media-links li i{
+.social-media-links li i {
   font-size: 30px;
   animation-name: social_media_link;
   animation-duration: 3s;
@@ -95,7 +92,6 @@ body {
   margin-bottom: 20px;
 }
 
-
 #main-viewport {
   z-index: 1;
   position: relative;
@@ -110,8 +106,8 @@ body {
   height: 100vh;
 }
 
-.hero-image::after{
-  content: '';
+.hero-image::after {
+  content: "";
   position: absolute;
   right: 0;
   bottom: 0;
@@ -131,7 +127,6 @@ body {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-
 }
 
 .hero-text {
@@ -143,7 +138,7 @@ body {
   animation-name: hero-text;
   animation-duration: 5s;
   animation-iteration-count: 1;
-  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);;
+  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 #heyIts {
@@ -175,10 +170,9 @@ body {
   animation-iteration-count: 1;
 }
 
-
 /* -------------------------  Menu Icon -------------------------------- */
 
-.right-side-bar{
+.right-side-bar {
   z-index: 2;
   position: fixed;
   right: 40px;
@@ -189,55 +183,48 @@ body {
   animation-iteration-count: 1;
 }
 
-.right-side-bar .menu-icon{
+.right-side-bar .menu-icon {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
 }
 
-.right-side-bar .menu-icon div{
+.right-side-bar .menu-icon div {
   background-color: white;
   width: 35px;
   height: 5px;
   border-radius: 15px;
 }
 
-
 /* -----------------------------about---------------------------------- */
 
-
-#about{
+#about {
   position: relative;
   min-height: 100vh;
   animation-name: about;
   animation-duration: 6s;
   animation-iteration-count: 1;
-  border: 1px solid red;
-
 }
 
-.about-wrap{
-  
+.about-wrap {
   position: relative;
   max-width: 75%;
   box-sizing: border-box;
   margin: 5rem auto 0px auto;
   display: flex;
   flex-direction: column;
-  
 }
 
-#about_title{
+#about_title {
   position: relative;
   width: fit-content;
   height: 10rem;
   left: -2rem;
   font-size: 2rem;
-  font-family: 'Open Sans', sans-serif;
-
+  font-family: "Open Sans", sans-serif;
 }
 
-.vertical_line{
+.vertical_line {
   position: absolute;
   border-top: 2px solid white;
   width: 100px;
@@ -245,30 +232,29 @@ body {
   top: 30px;
 }
 
-.about_paragraph_and_photo{
+.about_paragraph_and_photo {
   flex-grow: 1;
   position: relative;
   display: flex;
 }
 
-#about_paragraph{
+#about_paragraph {
   max-width: 60%;
 }
 
-#about_paragraph>p{
-  font-family: 'Open Sans Condensed', sans-serif;
+#about_paragraph > p {
+  font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.3rem;
-  color: #4091BF;
+  color: #4091bf;
   line-height: 35px;
 }
 
-.about_photo_section{
+.about_photo_section {
   position: relative;
   flex-grow: 1;
-  
 }
 
-#about-photo{
+#about-photo {
   position: absolute;
   margin: auto;
   left: 0;
@@ -280,45 +266,40 @@ body {
   z-index: 2;
 }
 
-#about-photo::after{
+#about-photo::after {
   position: absolute;
   left: 20px;
   top: 20px;
-  content: 'aaa';
-  border: 5px solid #4091BF;
+  content: "aaa";
+  border: 5px solid #4091bf;
   width: 230px;
-  height:295px;
+  height: 295px;
   z-index: -1;
-
 }
-
-
 
 /*-------------------------------------My Project------------------------------*/
 
-#my-project{
+#my-project {
   position: relative;
   min-height: 100vh;
-  border: 1px solid white;
 }
 
-#my-project-wrap{
+#my-project-wrap {
   box-sizing: border-box;
   margin: 5rem auto 0px auto;
-  border: 1px solid green;
   max-width: 75%;
 }
 
-#my-prject-title{
+#my-prject-title {
   position: relative;
   width: fit-content;
   height: 10rem;
   left: -2rem;
   font-size: 2rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-#projects-container{
+#projects-container {
   position: relative;
   max-width: 80%;
   margin: 0px auto;
@@ -327,35 +308,35 @@ body {
   row-gap: 100px;
 }
 
-.box-frame{
+.box-frame {
   position: relative;
   width: 100%;
   height: 13.02vw;
-  border-bottom: 4px solid #B28836;
-  border-right: 4px solid #B28836;
+  border-bottom: 4px solid #b28836;
+  border-right: 4px solid #b28836;
 }
 
- .box-frame::after{
-  content: '';
-  border-left: 4px solid #B28836;
+.box-frame::after {
+  content: "";
+  border-left: 4px solid #b28836;
   height: 20px;
   position: absolute;
   left: 0;
   bottom: 0;
 }
 
-.box-frame::before{
-  content: '';
-  border-top: 4px solid #B28836;
+.box-frame::before {
+  content: "";
+  border-top: 4px solid #b28836;
   width: 30px;
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.box{
+.box {
   display: flex;
-  border: 2px solid #B28836;
+  border: 2px solid #b28836;
   width: 100%;
   height: 13.02vw;
   position: absolute;
@@ -363,7 +344,131 @@ body {
   top: -40px;
 }
 
-.box>div{
-  border: 2px solid white;
-  width: 50%;
+.box > div:nth-child(2) {
+  min-width: 300px;
+  border-left: 2px solid #b28836;
+}
+
+#projects-container > section:nth-child(1) > section > div:nth-child(2) {
+  background-image: url("../images/blueOcean.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#projects-container > section:nth-child(2) > section > div:nth-child(2) {
+  background-image: url("../images/carParking.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#projects-container > section:nth-child(3) > section > div:nth-child(2) {
+  background-image: url("../images/orel.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#projects-container > section:nth-child(4) > section > div:nth-child(2) {
+  background-image: url("../images/retail.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.box > div:nth-child(1) {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 10px;
+  justify-content: space-evenly;
+}
+
+.box-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  color: #b28836;
+}
+
+.box-paragraph {
+  line-height: 2rem;
+  font-size: 1.2rem;
+  color: white;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.box > div > .available-on > ul {
+  list-style: none;
+  display: inline-block;
+  margin: 0px 10px;
+}
+
+.box > div > .available-on {
+  color: #b28836;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+}
+
+.box > div > .available-on > ul > li > i {
+  font-size: 1rem;
+}
+
+#projects-container>section>div:nth-child(2){
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  color: #b28836;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+}
+
+#projects-container>section>div:nth-child(2)>ul{
+  display: inline-block;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1rem;
+}
+
+#projects-container>section>div:nth-child(2)>ul>li{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+#projects-container>section>div:nth-child(2)>ul>li:nth-child(1){
+  border-right: 2px solid white;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+/*--------------------------------------------My-Education----------------------------------------------------*/
+
+#my-education {
+  position: relative;
+  min-height: 100vh;
+  border: 1px solid red;
+}
+
+#my-education-wrap {
+  position: relative;
+  box-sizing: border-box;
+  margin: 5rem auto 0px auto;
+  max-width: 75%;
+  border: 1px solid white;
+}
+
+#my-education-title {
+  position: relative;
+  width: fit-content;
+  height: 10rem;
+  left: -2rem;
+  font-size: 2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+#my-education-container{
+  border: 1px solid red;
+  width: 90%;
+  margin: 0px auto;
 }
