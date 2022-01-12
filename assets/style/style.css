@@ -415,7 +415,7 @@ body {
   font-size: 1rem;
 }
 
-#projects-container>section>div:nth-child(2){
+#projects-container > section > div:nth-child(2) {
   position: absolute;
   bottom: 5px;
   left: 10px;
@@ -424,19 +424,19 @@ body {
   font-size: 0.8rem;
 }
 
-#projects-container>section>div:nth-child(2)>ul{
+#projects-container > section > div:nth-child(2) > ul {
   display: inline-block;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-size: 1rem;
 }
 
-#projects-container>section>div:nth-child(2)>ul>li{
+#projects-container > section > div:nth-child(2) > ul > li {
   display: inline-block;
   margin: 0;
   padding: 0;
 }
 
-#projects-container>section>div:nth-child(2)>ul>li:nth-child(1){
+#projects-container > section > div:nth-child(2) > ul > li:nth-child(1) {
   border-right: 2px solid white;
   padding-right: 10px;
   margin-right: 10px;
@@ -447,7 +447,6 @@ body {
 #my-education {
   position: relative;
   min-height: 100vh;
-  border: 1px solid red;
 }
 
 #my-education-wrap {
@@ -455,7 +454,6 @@ body {
   box-sizing: border-box;
   margin: 5rem auto 0px auto;
   max-width: 75%;
-  border: 1px solid white;
 }
 
 #my-education-title {
@@ -467,8 +465,91 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-#my-education-container{
-  border: 1px solid red;
+#my-education-container {
   width: 90%;
   margin: 0px auto;
+}
+
+/*---------------------------------My-Skill-----------------------------*/
+
+#my-skill {
+  position: relative;
+  min-height: 100vh;
+}
+
+#my-skill-wrap {
+  position: relative;
+  box-sizing: border-box;
+  margin: 5rem auto 0px auto;
+  max-width: 75%;
+}
+
+#my-skill-title {
+  position: relative;
+  width: fit-content;
+  height: 10rem;
+  left: -2rem;
+  font-size: 2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+#my-skill-container {
+  width: 90%;
+  margin: 0px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  column-gap: 50px;
+  row-gap: 50px;
+}
+
+.skill-item {
+  position: relative;
+  flex-basis: 300px;
+  height: 100px;
+  border: 2px solid white;
+  border-bottom: 5px solid #5ca47d;
+  border-radius: 10px;
+}
+
+.skill-image{
+  height: 80px;
+  width: 130px;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#my-sql-image{
+  background-image: url("../images/my-skill-images/mysql.png");
+}
+
+#java-image{
+  background-image: url("../images/my-skill-images/toppng.com-java-logo-379x512.png");
+}
+
+#hibernate-image{
+  background-image: url("../images/my-skill-images/hibernate_icon_darkbkg_256px.png");
+}
+
+#html-image{
+  background-image: url("../images/my-skill-images/pngegg\ .png");
+}
+
+#photoshop-image{
+  background-image: url("../images/my-skill-images/5a219145388087.5866319615121493172314.png");
+}
+
+#illustrator-image{
+  background-image: url("../images/my-skill-images/pngfind.com-adobe-illustrator-logo-png-1605318.png");
+}
+
+#blender-image{
+  background-image: url("../images/my-skill-images/KEY0.CC-blender-icônes-d-ordinateur-logiciels-d-ordinateur-blender.png");
 }
