@@ -311,7 +311,7 @@ body {
 .box-frame {
   position: relative;
   width: 100%;
-  height: 13.02vw;
+  height: 250px;
   border-bottom: 4px solid #b28836;
   border-right: 4px solid #b28836;
 }
@@ -338,7 +338,7 @@ body {
   display: flex;
   border: 2px solid #b28836;
   width: 100%;
-  height: 13.02vw;
+  height: 250px;
   position: absolute;
   left: -30px;
   top: -40px;
@@ -467,9 +467,74 @@ body {
 
 #my-education-container {
   width: 90%;
+  min-height: 80vh;
   margin: 0px auto;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
 }
 
+#arrow-section{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 25%;
+  border: 1px solid blue;
+}
+
+#information-section{
+  position: relative;
+  border: 1px solid green;
+  flex-grow: 1;
+}
+
+#arrow{
+  position: relative;
+  border-left: 5px solid #B23636;
+  height: 75%;
+  width: 0;
+  
+}
+
+#arrow-head{
+  position: absolute;
+  border-left: 5px solid #B23636;
+  border-top: 5px solid #B23636;
+  height: 30px;
+  width: 30px;
+  left: -18px;
+  top: 4px;
+  transform: rotateZ(45deg);
+}
+
+#arrow-section::before{
+  content: '2020';
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+#arrow-section::after{
+  
+  content: '2006';
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+#main-divider{
+  position: absolute;
+  border-left: 5px solid #B23636;
+  border-bottom: 5px solid #B23636;
+  border-top: 5px solid #B23636;
+  height: 80%;
+  width: 30px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
 /*---------------------------------My-Skill-----------------------------*/
 
 #my-skill {
@@ -513,7 +578,15 @@ body {
   border-radius: 10px;
 }
 
-.skill-image{
+.skill-item > div:nth-child(1) {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.skill-image {
   height: 80px;
   width: 130px;
   position: absolute;
@@ -526,30 +599,116 @@ body {
   background-repeat: no-repeat;
 }
 
-#my-sql-image{
+#my-sql-image {
   background-image: url("../images/my-skill-images/mysql.png");
 }
 
-#java-image{
+#java-image {
   background-image: url("../images/my-skill-images/toppng.com-java-logo-379x512.png");
 }
 
-#hibernate-image{
+#hibernate-image {
   background-image: url("../images/my-skill-images/hibernate_icon_darkbkg_256px.png");
 }
 
-#html-image{
+#html-image {
   background-image: url("../images/my-skill-images/pngegg\ .png");
 }
 
-#photoshop-image{
+#photoshop-image {
   background-image: url("../images/my-skill-images/5a219145388087.5866319615121493172314.png");
 }
 
-#illustrator-image{
+#illustrator-image {
   background-image: url("../images/my-skill-images/pngfind.com-adobe-illustrator-logo-png-1605318.png");
 }
 
-#blender-image{
+#blender-image {
   background-image: url("../images/my-skill-images/KEY0.CC-blender-icônes-d-ordinateur-logiciels-d-ordinateur-blender.png");
 }
+
+
+/*-----------------------------Contact-----------------------------------*/
+
+#contact {
+  position: relative;
+  min-height: 100vh;
+}
+
+#contact-wrap {
+  box-sizing: border-box;
+  margin: 5rem auto 0px auto;
+  max-width: 75%;
+}
+
+#contact-title {
+  position: relative;
+  width: fit-content;
+  height: 10rem;
+  left: -2rem;
+  font-size: 2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+#contact-container{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0px auto;
+  row-gap: 50px;
+  
+}
+
+#contact-container>div{
+  position: relative;
+  left: -20px;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.5rem;
+}
+
+.contact-frame{
+  position: relative;
+  border-right: 1px solid #76B834;
+  border-bottom: 1px solid #76B834;
+  height: 70px;
+}
+
+.contact-frame::before{
+  content: '';
+  border-left: 1px solid #76B834;
+  height: 15px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.contact-frame::after{
+  content: '';
+  border-top: 1px solid #76B834;
+  width: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.contact-box{
+  position: relative;
+  border: 1px solid #76B834;
+  height: 100%;
+  left: -15px;
+  top: -15px;
+}
+
+.contact-box>div{
+  font-family: 'Open Sans', sans-serif;
+  color: #76B834;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  font-size: 1rem;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
