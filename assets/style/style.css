@@ -587,8 +587,9 @@ body {
 }
 
 .skill-image {
-  height: 80px;
-  width: 130px;
+  height: 70px;
+  width: 70px;
+  
   position: absolute;
   right: 20px;
   top: 0;
@@ -673,6 +674,7 @@ body {
   height: 70px;
 }
 
+
 .contact-frame::before{
   content: '';
   border-left: 1px solid #76B834;
@@ -712,3 +714,103 @@ body {
   margin: auto;
 }
 
+#send-frame{
+  position: relative;
+  border-right: 2px solid #8FAE37;
+  border-bottom: 2px solid #8FAE37;
+  height: 40px;
+  width: 100px;
+  bottom: 20px;
+  right: 10px;
+}
+
+#send-frame::before{
+  content: '';
+  border-left: 2px solid #8FAE37;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+#send-frame::after{
+  content: '';
+  border-top: 2px solid #8FAE37;
+  width: 5px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#send-box{
+  position: relative;
+  border: 2px solid #8FAE37;
+  height: 100%;
+  left: -5px;
+  top: -5px;
+}
+
+#send-box>div{
+  font-family: 'Open Sans', sans-serif;
+  color: #37AE83;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  font-size: 1.2rem;
+  left: 0px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+footer>section{
+  opacity: 80%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+footer>section>div:nth-child(1){
+  display: flex;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+footer>section>div:nth-child(1)>div{
+  height: 30px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.2rem;
+  
+}
+
+footer>section>div:nth-child(1)>div:nth-child(2){
+  border-left: 2px solid white;
+  padding-left: 20px;
+  margin-left: 20px;
+}
+
+footer>section>div:nth-child(1)>div:nth-child(3){
+  border-left: 2px solid white;
+  padding-left: 20px;
+  margin-left: 20px;
+}
+
+footer>section>div>div>a{
+  text-decoration: none;
+}
+
+
+footer>section>div:nth-child(2){
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50%;
+  padding: 0px 10px;
+}
+
+footer>section>div:nth-child(2)>div{
+  font-family: 'Open Sans', sans-serif;
+  font-size: .7rem;
+}
