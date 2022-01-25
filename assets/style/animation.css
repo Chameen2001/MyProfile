@@ -125,7 +125,7 @@
   }
 }
 
-@keyframes about{
+@keyframes until-animate{
   0%,99%{
     opacity: 0;
   }

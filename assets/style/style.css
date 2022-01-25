@@ -201,7 +201,7 @@ body {
 #about {
   position: relative;
   min-height: 100vh;
-  animation-name: about;
+  animation-name: until-animate;
   animation-duration: 6s;
   animation-iteration-count: 1;
 }
@@ -243,7 +243,7 @@ body {
 }
 
 #about_paragraph > p {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.3rem;
   color: #4091bf;
   line-height: 35px;
@@ -282,6 +282,9 @@ body {
 #my-project {
   position: relative;
   min-height: 100vh;
+  animation-name: until-animate;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
 }
 
 #my-project-wrap {
@@ -447,6 +450,9 @@ body {
 #my-education {
   position: relative;
   min-height: 100vh;
+  animation-name: until-animate;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
 }
 
 #my-education-wrap {
@@ -469,39 +475,35 @@ body {
   width: 90%;
   min-height: 90vh;
   margin: 0px auto;
-  border: 1px solid blue;
   display: flex;
   flex-direction: row;
 }
 
-#arrow-section{
+#arrow-section {
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
   position: relative;
   width: 25%;
-  border: 1px solid white;
 }
 
-#information-section{
+#information-section {
   position: relative;
-  border: 1px solid green;
   flex-grow: 1;
 }
 
-#arrow{
+#arrow {
   position: relative;
-  border-left: 5px solid #B23636;
+  border-left: 5px solid #b23636;
   height: 75%;
   width: 0;
-  
 }
 
-#arrow-head{
+#arrow-head {
   position: absolute;
-  border-left: 5px solid #B23636;
-  border-top: 5px solid #B23636;
+  border-left: 5px solid #b23636;
+  border-top: 5px solid #b23636;
   height: 30px;
   width: 30px;
   left: -18px;
@@ -509,26 +511,25 @@ body {
   transform: rotateZ(45deg);
 }
 
-#arrow-section::before{
-  content: '2020';
+#arrow-section::before {
+  content: "2020";
   font-family: "Open Sans", sans-serif;
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
-#arrow-section::after{
-  
-  content: '2006';
+#arrow-section::after {
+  content: "2006";
   font-family: "Open Sans", sans-serif;
   font-size: 1.5rem;
   margin-top: 20px;
 }
 
-#main-divider{
+#main-divider {
   position: absolute;
-  border-left: 5px solid #B23636;
-  border-bottom: 5px solid #B23636;
-  border-top: 5px solid #B23636;
+  border-left: 5px solid #b23636;
+  border-bottom: 5px solid #b23636;
+  border-top: 5px solid #b23636;
   height: 80%;
   width: 40px;
   top: 0;
@@ -536,25 +537,25 @@ body {
   margin: auto;
 }
 
-#main-divider::before{
-  content: '';
-  border-top: 5px solid #B23636;
+#main-divider::before {
+  content: "";
+  border-top: 5px solid #b23636;
   width: 35px;
   position: absolute;
   top: 220px;
 }
 
-#main-divider::after{
-  content: '';
-  border-top: 5px solid #B23636;
+#main-divider::after {
+  content: "";
+  border-top: 5px solid #b23636;
   width: 35px;
   position: absolute;
-  bottom:200px;
+  bottom: 200px;
 }
 
-.education-frame{
+.education-frame {
   position: absolute;
-  border: 3px solid #B23636;
+  border: 3px solid #b23636;
   width: 400px;
   height: 130px;
   z-index: -1;
@@ -562,9 +563,9 @@ body {
   top: 50px;
 }
 
-.education-box{
+.education-box {
   position: absolute;
-  border: 3px solid #B23636;
+  border: 3px solid #b23636;
   width: 100%;
   height: 100%;
   left: -3%;
@@ -577,38 +578,114 @@ body {
   padding-left: 10px;
 }
 
-.education-box>span{
-  font-family: 'Open Sans', sans-serif;
+.education-box > span {
+  font-family: "Open Sans", sans-serif;
   font-size: 1.7rem;
   line-height: 1.5rem;
 }
 
-.education-box>span>span{
+.education-box > span > span {
   font-size: 1.2rem;
 }
 
-#education-2-frame{
+#education-2-frame {
   top: 250px;
   width: 300px;
   height: 160px;
 }
 
-#education-3-frame{
+#education-3-frame {
   top: 510px;
   width: 300px;
   height: 100px;
 }
 
-#education-4-frame{
+#education-4-frame {
   top: 720px;
   width: 300px;
   height: 100px;
+}
+
+#second-divider {
+  position: absolute;
+  border-left: 5px solid #b23636;
+  border-bottom: 5px solid #b23636;
+  border-top: 5px solid #b23636;
+  height: 50%;
+  width: 40px;
+  top: 350px;
+  left: 500px;
+}
+
+#second-divider::before {
+  content: "";
+  border-top: 5px solid #b23636;
+  width: 35px;
+  height: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#second-divider::after {
+  content: "";
+  border-top: 5px solid #b23636;
+  width: 35px;
+  height: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -40px;
+  margin: auto;
+}
+
+#education-5-frame {
+  top: 320px;
+  left: 560px;
+  width: 230px;
+  height: 90px;
+}
+
+#education-box-5 > span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+#education-6-frame {
+  top: 530px;
+  left: 560px;
+  width: 230px;
+  height: 90px;
+}
+
+#education-box-6 > span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+#education-7-frame {
+  top: 740px;
+  left: 560px;
+  width: 230px;
+  height: 90px;
+}
+
+#education-box-7 > span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 /*---------------------------------My-Skill-----------------------------*/
 
 #my-skill {
   position: relative;
   min-height: 100vh;
+  animation-name: until-animate;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
 }
 
 #my-skill-wrap {
@@ -658,7 +735,7 @@ body {
 .skill-image {
   height: 70px;
   width: 70px;
-  
+
   position: absolute;
   right: 20px;
   top: 0;
@@ -697,12 +774,14 @@ body {
   background-image: url("../images/my-skill-images/KEY0.CC-blender-icônes-d-ordinateur-logiciels-d-ordinateur-blender.png");
 }
 
-
 /*-----------------------------Contact-----------------------------------*/
 
 #contact {
   position: relative;
   min-height: 100vh;
+  animation-name: until-animate;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
 }
 
 #contact-wrap {
@@ -720,59 +799,57 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-#contact-container{
+#contact-container {
   display: flex;
   flex-direction: column;
   width: 50%;
   margin: 0px auto;
   row-gap: 50px;
-  
 }
 
-#contact-container>div{
+#contact-container > div {
   position: relative;
   left: -20px;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.5rem;
 }
 
-.contact-frame{
+.contact-frame {
   position: relative;
-  border-right: 1px solid #76B834;
-  border-bottom: 1px solid #76B834;
+  border-right: 1px solid #76b834;
+  border-bottom: 1px solid #76b834;
   height: 70px;
 }
 
-
-.contact-frame::before{
-  content: '';
-  border-left: 1px solid #76B834;
+.contact-frame::before {
+  content: "";
+  border-left: 1px solid #76b834;
   height: 15px;
   position: absolute;
   left: 0;
   bottom: 0;
 }
 
-.contact-frame::after{
-  content: '';
-  border-top: 1px solid #76B834;
+.contact-frame::after {
+  content: "";
+  border-top: 1px solid #76b834;
   width: 15px;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.contact-box{
+.contact-box {
   position: relative;
-  border: 1px solid #76B834;
+  border: 1px solid #76b834;
   height: 100%;
   left: -15px;
   top: -15px;
 }
 
-.contact-box>div{
-  font-family: 'Open Sans', sans-serif;
-  color: #76B834;
+.contact-box > div {
+  font-family: "Open Sans", sans-serif;
+  color: #76b834;
   width: fit-content;
   height: fit-content;
   position: absolute;
@@ -783,45 +860,45 @@ body {
   margin: auto;
 }
 
-#send-frame{
+#send-frame {
   position: relative;
-  border-right: 2px solid #8FAE37;
-  border-bottom: 2px solid #8FAE37;
+  border-right: 2px solid #8fae37;
+  border-bottom: 2px solid #8fae37;
   height: 40px;
   width: 100px;
   bottom: 20px;
   right: 10px;
 }
 
-#send-frame::before{
-  content: '';
-  border-left: 2px solid #8FAE37;
+#send-frame::before {
+  content: "";
+  border-left: 2px solid #8fae37;
   height: 5px;
   position: absolute;
   left: 0;
   bottom: 0;
 }
 
-#send-frame::after{
-  content: '';
-  border-top: 2px solid #8FAE37;
+#send-frame::after {
+  content: "";
+  border-top: 2px solid #8fae37;
   width: 5px;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-#send-box{
+#send-box {
   position: relative;
-  border: 2px solid #8FAE37;
+  border: 2px solid #8fae37;
   height: 100%;
   left: -5px;
   top: -5px;
 }
 
-#send-box>div{
-  font-family: 'Open Sans', sans-serif;
-  color: #37AE83;
+#send-box > div {
+  font-family: "Open Sans", sans-serif;
+  color: #37ae83;
   width: fit-content;
   height: fit-content;
   position: absolute;
@@ -833,45 +910,49 @@ body {
   margin: auto;
 }
 
-footer>section{
+footer{
+  animation-name: until-animate;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+}
+
+footer > section {
   opacity: 80%;
   height: 150px;
   display: flex;
   flex-direction: column;
 }
 
-footer>section>div:nth-child(1){
+footer > section > div:nth-child(1) {
   display: flex;
   height: 50%;
   justify-content: center;
   align-items: center;
 }
 
-footer>section>div:nth-child(1)>div{
+footer > section > div:nth-child(1) > div {
   height: 30px;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.2rem;
-  
 }
 
-footer>section>div:nth-child(1)>div:nth-child(2){
+footer > section > div:nth-child(1) > div:nth-child(2) {
   border-left: 2px solid white;
   padding-left: 20px;
   margin-left: 20px;
 }
 
-footer>section>div:nth-child(1)>div:nth-child(3){
+footer > section > div:nth-child(1) > div:nth-child(3) {
   border-left: 2px solid white;
   padding-left: 20px;
   margin-left: 20px;
 }
 
-footer>section>div>div>a{
+footer > section > div > div > a {
   text-decoration: none;
 }
 
-
-footer>section>div:nth-child(2){
+footer > section > div:nth-child(2) {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -879,7 +960,7 @@ footer>section>div:nth-child(2){
   padding: 0px 10px;
 }
 
-footer>section>div:nth-child(2)>div{
-  font-family: 'Open Sans', sans-serif;
-  font-size: .7rem;
+footer > section > div:nth-child(2) > div {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.7rem;
 }
