@@ -243,7 +243,7 @@ body {
 }
 
 #about_paragraph > p {
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.3rem;
   color: #4091bf;
   line-height: 35px;
@@ -467,9 +467,9 @@ body {
 
 #my-education-container {
   width: 90%;
-  min-height: 80vh;
+  min-height: 90vh;
   margin: 0px auto;
-  border: 1px solid red;
+  border: 1px solid blue;
   display: flex;
   flex-direction: row;
 }
@@ -481,7 +481,7 @@ body {
   flex-direction: column;
   position: relative;
   width: 25%;
-  border: 1px solid blue;
+  border: 1px solid white;
 }
 
 #information-section{
@@ -530,10 +530,79 @@ body {
   border-bottom: 5px solid #B23636;
   border-top: 5px solid #B23636;
   height: 80%;
-  width: 30px;
+  width: 40px;
   top: 0;
   bottom: 0;
   margin: auto;
+}
+
+#main-divider::before{
+  content: '';
+  border-top: 5px solid #B23636;
+  width: 35px;
+  position: absolute;
+  top: 220px;
+}
+
+#main-divider::after{
+  content: '';
+  border-top: 5px solid #B23636;
+  width: 35px;
+  position: absolute;
+  bottom:200px;
+}
+
+.education-frame{
+  position: absolute;
+  border: 3px solid #B23636;
+  width: 400px;
+  height: 130px;
+  z-index: -1;
+  left: 80px;
+  top: 50px;
+}
+
+.education-box{
+  position: absolute;
+  border: 3px solid #B23636;
+  width: 100%;
+  height: 100%;
+  left: -3%;
+  top: -13%;
+  z-index: 1;
+  background-color: #0c0c0c;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.education-box>span{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.7rem;
+  line-height: 1.5rem;
+}
+
+.education-box>span>span{
+  font-size: 1.2rem;
+}
+
+#education-2-frame{
+  top: 250px;
+  width: 300px;
+  height: 160px;
+}
+
+#education-3-frame{
+  top: 510px;
+  width: 300px;
+  height: 100px;
+}
+
+#education-4-frame{
+  top: 720px;
+  width: 300px;
+  height: 100px;
 }
 /*---------------------------------My-Skill-----------------------------*/
 
