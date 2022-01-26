@@ -964,3 +964,84 @@ footer > section > div:nth-child(2) > div {
   font-family: "Open Sans", sans-serif;
   font-size: 0.7rem;
 }
+
+
+/*----------------------------My Assignment-------------------------------*/
+
+#my-assignment{
+  position: relative;
+  min-height: 100vh;
+  animation-name: until-animate;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+}
+
+#my-assignment-wrap{
+  box-sizing: border-box;
+  margin: 5rem auto 0px auto;
+  max-width: 75%;
+}
+
+#my-assignment-title{
+  position: relative;
+  width: fit-content;
+  height: 10rem;
+  left: -2rem;
+  font-size: 2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+#assignment-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 30px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.assignment-box{
+  width: 400px;
+  height: 200px;
+  
+  box-shadow: 2px 2px 5px 1px rgba(255, 255, 255, 0.082);
+}
+
+#assignment-1{
+  border-top: 2px solid #3152C9;
+}
+
+#assignment-2{
+  border-top: 2px solid #B3C931;
+}
+
+#assignment-3{
+  border-top: 2px solid #31C992;
+}
+
+#assignment-4{
+  border-top: 2px solid #8631C9;
+}
+
+#assignment-5{
+  border-top: 2px solid #34C931;
+}
+
+#assignment-6{
+  border-top: 2px solid #ACCAED;
+}
+
+#assignment-7{
+  border-top: 2px solid #B5FCAA;
+}
+
+#assignment-8{
+  border-top: 2px solid #FFB8F8;
+}
+
+#assignment-9{
+  border-top: 2px solid #C10E0E;
+}
