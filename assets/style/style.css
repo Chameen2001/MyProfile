@@ -222,6 +222,7 @@ body {
   left: -2rem;
   font-size: 2rem;
   font-family: "Open Sans", sans-serif;
+  letter-spacing: 5px;
 }
 
 .vertical_line {
@@ -300,6 +301,7 @@ body {
   left: -2rem;
   font-size: 2rem;
   font-family: "Open Sans", sans-serif;
+  letter-spacing: 5px;
 }
 
 #projects-container {
@@ -469,6 +471,7 @@ body {
   left: -2rem;
   font-size: 2rem;
   font-family: "Open Sans", sans-serif;
+  letter-spacing: 5px;
 }
 
 #my-education-container {
@@ -702,6 +705,7 @@ body {
   left: -2rem;
   font-size: 2rem;
   font-family: "Open Sans", sans-serif;
+  letter-spacing: 5px;
 }
 
 #my-skill-container {
@@ -797,6 +801,7 @@ body {
   left: -2rem;
   font-size: 2rem;
   font-family: "Open Sans", sans-serif;
+  letter-spacing: 5px;
 }
 
 #contact-container {
@@ -989,6 +994,7 @@ footer > section > div:nth-child(2) > div {
   left: -2rem;
   font-size: 2rem;
   font-family: "Open Sans", sans-serif;
+  letter-spacing: 5px;
 }
 
 #assignment-container{
@@ -1006,12 +1012,13 @@ footer > section > div:nth-child(2) > div {
 .assignment-box{
   width: 400px;
   height: 200px;
-  
   box-shadow: 2px 2px 5px 1px rgba(255, 255, 255, 0.082);
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 #assignment-1{
-  border-top: 2px solid #3152C9;
+  border-top: 2px solid #0a93e2;
 }
 
 #assignment-2{
@@ -1044,4 +1051,55 @@ footer > section > div:nth-child(2) > div {
 
 #assignment-9{
   border-top: 2px solid #C10E0E;
+}
+
+.assignment-box>span:nth-child(1){
+  font-family: 'Comfortaa', cursive;
+  font-size: 1rem;
+  letter-spacing: 5px;
+}
+
+#assignment-1>span:nth-child(1){
+  color: #0a93e2;
+}
+
+#assignment-2>span:nth-child(1){
+  color: #B3C931;
+}
+
+#assignment-3>span:nth-child(1){
+  color: #31C992;
+}
+
+#assignment-4>span:nth-child(1){
+  color: #8631C9;
+}
+
+#assignment-5>span:nth-child(1){
+  color: #34C931;
+}
+
+#assignment-6>span:nth-child(1){
+  color: #ACCAED;
+}
+
+#assignment-7>span:nth-child(1){
+  color: #B5FCAA;
+}
+
+#assignment-8>span:nth-child(1){
+  color: #FFB8F8;
+}
+
+#assignment-9>span:nth-child(1){
+  color: #C10E0E;
+}
+
+.assignment-box>span:nth-child(2){
+  height: fit-content;
+  width: fit-content;
+  font-family: 'Slabo 27px', serif;
+  font-size: 1.5rem;
+  position: relative;
+  top: 20px;
 }
