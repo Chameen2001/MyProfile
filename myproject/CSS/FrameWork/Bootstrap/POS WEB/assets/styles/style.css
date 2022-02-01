@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#side-nav {
+  width: 250px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: -200px;
+  bottom: 0;
+  margin: auto;
+}
+
+#side-nav > ul {
+  height: 100%;
+  padding: 0;
+}
+
+#side-nav > ul > a {
+  list-style: none;
+  position: relative;
+  left: 0;
+  width: 100%;
+  background-color: #ffc035;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  transition-property: left;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in;
+  text-decoration: none;
+}
+
+#side-nav > ul > a:hover {
+  left: 150px;
+  transition-property: left;
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+
+#side-nav > ul > a > li > i {
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 25px;
+}
+
+#store-name {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+#place-order-section {
+  margin-left: 100px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#add-new-customer {
+  margin-left: 100px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: none;
+}
+
+#col-1,
+#col-2 {
+  border-radius: 20px;
+}
+
+#orderid-col {
+  font-family: "Montserrat", sans-serif;
+}
+
+#name {
+  color: #ffc035;
+}
+
+#add-customer-box{
+    width: 750px;
+    height: 700px;
+}
+
+#add-customer-box > span {
+  font-family: "Poppins", sans-serif;
+}
+
+#cus-search-box{
+    width: 50%;
+}
+
+.txtCusField{
+    width: 400px;
+}

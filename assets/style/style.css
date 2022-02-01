@@ -540,6 +540,38 @@ body {
   margin: auto;
 }
 
+#main-divider>div{
+  border: 1px solid #b23636;
+  width: 15px;
+  height: 15px;
+  background-color: #b23636;
+  border-radius: 100%;
+}
+
+#main-divider>div:nth-child(1){
+  position: absolute;
+  left: 33px;
+  top: -10px;
+}
+
+#main-divider>div:nth-child(2){
+  position: absolute;
+  left: 33px;
+  top: 215px;
+}
+
+#main-divider>div:nth-child(3){
+  position: absolute;
+  left: 33px;
+  top: 463px;
+}
+
+#main-divider>div:nth-child(4){
+  position: absolute;
+  left: 33px;
+  top: 668px;
+}
+
 #main-divider::before {
   content: "";
   border-top: 5px solid #b23636;

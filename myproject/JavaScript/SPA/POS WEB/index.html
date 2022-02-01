@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="stylesheet" href="assets/styles/fonts/css/all.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body class="bg-dark">
+    <section class="topbar">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a id="store-name" class="navbar-brand fs-3" href="#">
+            <span id="name">Dilhara's</span> Store</a
+          >
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >2022-01-20</a
+                >
+              </li>
+            </ul>
+            09:24:57
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <section id="side-nav">
+      <ul class="d-flex flex-column align-items-center justify-content-evenly">
+        <a id="btn1" href="#"><li>Home <i class="fas fa-home"></i></li></a>
+        <a id="btn2" href="#"><li>Add New Customer <i class="fas fa-user-plus"></i></li></a>
+        <a href=""><li>Modify Order<i class="fas fa-retweet"></i></li></a>
+        <a href=""><li>Remove Order<i class="fas fa-trash-alt"></i></li></a>
+        <a href=""><li>Managements<i class="fas fa-tasks"></i></li></a>
+      </ul>
+    </section>
+
+    <section id="place-order-section" class="mt-3 border border-3 bg-white">
+      <section class="container-fluid">
+        <section class="row">
+          <section class="col-12 col-sm-5 container-fluid">
+
+            <section class="row">
+              <section
+                class="border border-3 container-fluid mb-2 pt-3"
+                id="col-1"
+              >
+                <section class="row">
+                  <section class="col-12 col-lg-6">
+                    <form>
+                      <div class="mb-3">
+                        <label for="disabledSelect" class="form-label"
+                          >Select Customer</label
+                        >
+                        <select id="disabledSelect" class="form-select">
+                          <option>None</option>
+                        </select>
+                      </div>
+                    </form>
+                  </section>
+                  <section class="col-12 col-lg-6">
+                    <form>
+                      <div class="mb-3">
+                        <label for="disabledSelect" class="form-label"
+                          >Select Item</label
+                        >
+                        <select id="disabledSelect" class="form-select">
+                          <option>None</option>
+                        </select>
+                      </div>
+                    </form>
+                  </section>
+                </section>
+
+                <section class="row mt-5">
+                  <section class="col col-12 col-lg-6">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Name</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                  </section>
+
+                  <section class="col col-12 col-lg-6">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Address</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                      />
+                      <div id="emailHelp" class="form-text">
+                        We'll never share your email with anyone else.
+                      </div>
+                    </div>
+                  </section>
+                </section>
+
+              </section>
+            </section>
+
+            <section class="row">
+              <section
+                class="border border-3 container-fluid mb-2 pt-3"
+                id="col-1"
+              >
+              <!-- ssss -->
+
+              <section class="row mt-5">
+                <section class="col">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Item Name</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                </section>
+                <section class="col">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Available Stock</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                </section>
+                <section class="col">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Unit Price</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                </section>
+              </section>
+
+              <section class="row mt-5">
+                <section class="col">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Discount</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                </section>
+                <section class="col">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Max Discount</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                </section>
+                <section class="col">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Every Item</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                </section>
+              </section>
+
+              <section class="row mt-5">
+                <section class="col">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Quantity</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                </section>
+                <section
+                  class="col d-flex justify-content-center align-items-center"
+                >
+                  <div class="mb-3">
+                    <button type="button" class="btn btn-primary mt-4 px-5">
+                      Add To Cart
+                    </button>
+                  </div>
+                </section>
+              </section>
+
+              <!-- kkkk -->
+            </section>
+            </section>
+          </section>
+
+          <section class="col-12 col-sm-5 container-fluid">
+            <section class="row">
+              <section
+                class="border border-3 container-fluid mb-2 pt-3"
+                id="col-2"
+              >
+                <section class="row">
+                  <section class="col-6 fs-3" id="orderid-col">
+                    Order ID : O001
+                  </section>
+                  <section class="col-6 text-end">
+                    <button type="button" class="btn btn-danger">
+                      Clear All
+                    </button>
+                  </section>
+                </section>
+
+                <section class="row mt-4">
+                  <section class="col-12">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Item ID</th>
+                          <th scope="col">Description</th>
+                          <th scope="col">Quantity</th>
+                          <th scope="col">Discount</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>Rs.1000.00</td>
+                          <td>
+                            <button type="button" class="btn btn-danger">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                          <td>Rs.1000.00</td>
+                          <td>
+                            <button type="button" class="btn btn-danger">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td colspan="2">Larry the Bird</td>
+                          <td>@twitter</td>
+                          <td>Rs.1000.00</td>
+                          <td>
+                            <button type="button" class="btn btn-danger">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">4</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>Rs.1000.00</td>
+                          <td>
+                            <button type="button" class="btn btn-danger">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </section>
+                </section>
+              </section>
+            </section>
+
+            <section class="row">
+              <section
+                class="border border-3 container-fluid"
+                id="col-2"
+              >
+                <section class="row">
+                  <section class="col fs-4">
+                    Sub Total : 
+                  </section>
+                  <section class="col text-end fs-4">
+                    Rs.52,245.00
+                  </section>
+                </section>
+
+                <section class="row mt-3">
+                  <section class="col fs-3">
+                    Total : 
+                  </section>
+                  <section class="col text-end fs-3">
+                    Rs.52,245.00
+                  </section>
+                </section>
+
+                <section class="row p-3">
+                  <button type="button" class="btn btn-success">Pay Now</button>
+                </section>
+              </section>
+            </section>
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <section id="add-new-customer" class="mt-3 border border-3 bg-white">
+      sssss
+    </section>
+
+    <script>
+
+      document.getElementById("btn1").addEventListener("click",function(){
+        document.getElementById("add-new-customer").style.display='none'
+        document.getElementById("place-order-section").style.display='block'
+      })
+
+
+      document.getElementById("btn2").addEventListener("click",function(){
+        document.getElementById("place-order-section").style.display='none'
+        document.getElementById("add-new-customer").style.display='block'
+      })
+    </script>
+  </body>
+</html>

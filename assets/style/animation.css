@@ -1,4 +1,4 @@
-@keyframes social_media_link {
+/* @keyframes social_media_link {
   0% {
     transform: scale(1);
   }
@@ -123,13 +123,4 @@
   100% {
     opacity: 100%;
   }
-}
-
-@keyframes until-animate{
-  0%,99%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
-  }
-}
+} */
