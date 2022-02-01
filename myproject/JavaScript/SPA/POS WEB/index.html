@@ -369,21 +369,79 @@
       </section>
     </section>
 
-    <section id="add-new-customer" class="mt-3 border border-3 bg-white">
-      sssss
-    </section>
+    <section id="add-customer-section" class="mt-3 border border-3 bg-white">
+      <section class="container-fluid">
+          <section class="row">
+              <section class="col d-flex justify-content-center align-items-center border-end">
+                  <div class="d-flex justify-content-center align-items-center flex-column" id="add-customer-box">
+                      <span class="fs-3">Add Customer</span>
+                      <div class="mb-3 mt-5">
+                        
+                        <input type="text" class="form-control txtCusField" id="txtCusId" placeholder="Customer ID">
+                      </div>
+
+                      <div class="mb-3">
+    
+                        <input type="text" class="form-control txtCusField" id="txtCusName" placeholder="Customer Name">
+                      </div>
+
+                      <div class="mb-3">
+                        
+                        <input type="email" class="form-control txtCusField" id="txtCusAddress" aria-describedby="emailHelp" placeholder="Customer Address">
+                      </div>
+
+                      <div class="mb-3">
+                        <input type="tel" class="form-control txtCusField" id="txtCusTel" placeholder="Telephone">
+                      </div>
+                      <button type="button" class="btn btn-success mt-3">Save Or Update</button>
+                  </div>
+              </section>
+              <section class="col">
+                <div class="d-flex flex-row justify-content-md-start align-items-start">
+                    <input type="email" class="form-control ms-3" id="cus-search-box" aria-describedby="emailHelp" placeholder="Search">
+                    <button type="button" class="btn btn-primary ms-3">Search</button>
+                </div>
+                <table class="table mt-3">
+                    <thead class="bg-danger text-white">
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Tel</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">C001</th>
+                        <td>Chameen</td>
+                        <td>Gampaha</td>
+                        <td>0767047467</td>
+                        <td><button type="button" class="btn btn-primary ms-3">Update</button>
+                            <button type="button" class="btn btn-danger ms-3">Delete</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </section>
+          </section>
+      </section>
+  </section>
+
+    <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 
     <script>
 
+      $("#add-customer-section").css('display','none');
+
       document.getElementById("btn1").addEventListener("click",function(){
-        document.getElementById("add-new-customer").style.display='none'
+        document.getElementById("add-customer-section").style.display='none'
         document.getElementById("place-order-section").style.display='block'
       })
 
 
       document.getElementById("btn2").addEventListener("click",function(){
         document.getElementById("place-order-section").style.display='none'
-        document.getElementById("add-new-customer").style.display='block'
+        document.getElementById("add-customer-section").style.display='block'
       })
     </script>
   </body>

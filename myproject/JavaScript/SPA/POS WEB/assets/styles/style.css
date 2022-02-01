@@ -61,21 +61,12 @@
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
-#place-order-section{
+#place-order-section, #add-customer-section{
     margin-left: 100px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-}
-
-#add-new-customer{
-    margin-left: 100px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: none;
 }
 
 #col-1, #col-2{
@@ -88,4 +79,21 @@
 
 #name{
     color: #ffc035;
+}
+
+#add-customer-box{
+    width: 750px;
+    height: 700px;
+}
+
+#add-customer-box > span {
+  font-family: "Poppins", sans-serif;
+}
+
+#cus-search-box{
+    width: 50%;
+}
+
+.txtCusField{
+    width: 400px;
 }
