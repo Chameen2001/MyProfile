@@ -442,8 +442,11 @@
         $("#add-customer-section").css("display","block");
       });
 
+      //Add Or Update Function
+
       $("#btnSaveOrUpdate").click(function(){
 
+        // Get Value From Text Fields
         let cusId = $("#txtCusId").val();
         let cusName = $("#txtCusName").val();
         let cusAddress = $("#txtCusAddress").val();
@@ -451,7 +454,33 @@
 
         let newRaw = `<tr><th scope="row">${cusId}</th><td>${cusName}</td><td>${cusAddress}</td><td>${cusTel}</td><td><button type="button" class="btn btn-danger ms-3">Delete</button></td></tr>`;
 
+        // Add New Row
+
         $("#tblBody").append(newRaw);
+
+          let txtCusId = $("#txtCusId");
+          let txtCusName = $("#txtCusName");
+          let txtCusAddress = $("#txtCusAddress");
+          let txtCusTel = $("#txtCusTel");
+
+          // clear Text Field After Adding Row
+
+          txtCusId.val('');
+          txtCusName.val('');
+          txtCusAddress.val('');
+          txtCusTel.val('');
+
+          // Row Click Function
+        $("#tblBody>tr").click(function(){
+          console.log(this);
+          
+          // Add Data To Text Field
+          txtCusId.val($(this).children(":nth-child(1)").text());
+          txtCusName.val($(this).children(":nth-child(2)").text())
+          txtCusAddress.val($(this).children(":nth-child(3)").text())
+          txtCusTel.val($(this).children(":nth-child(4)").text())
+
+        });
 
       })
 
