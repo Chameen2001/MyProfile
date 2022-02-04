@@ -213,6 +213,7 @@ body {
   margin: 5rem auto 0px auto;
   display: flex;
   flex-direction: column;
+  
 }
 
 #about_title {
@@ -237,10 +238,12 @@ body {
   flex-grow: 1;
   position: relative;
   display: flex;
+
 }
 
 #about_paragraph {
   max-width: 60%;
+  
 }
 
 #about_paragraph > p {
@@ -253,6 +256,7 @@ body {
 .about_photo_section {
   position: relative;
   flex-grow: 1;
+  
 }
 
 #about-photo {
@@ -262,9 +266,9 @@ body {
   top: 0;
   right: 0;
   bottom: 0;
-  width: fit-content;
-  height: fit-content;
-  z-index: 2;
+  width: 239px;
+  height: 303px;
+  background-image: url("../images/Screenshot-20220106230848-239x303.png");
 }
 
 #about-photo::after {
@@ -311,6 +315,7 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 100px;
+  
 }
 
 .box-frame {
