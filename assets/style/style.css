@@ -460,6 +460,7 @@ body {
   animation-name: until-animate;
   animation-duration: 6s;
   animation-iteration-count: 1;
+  
 }
 
 #my-education-wrap {
@@ -958,43 +959,48 @@ footer{
   animation-iteration-count: 1;
 }
 
-footer > section {
+#footer-wrap{
+  width: 75%;
+  margin: auto;
+}
+
+footer > section > section {
   opacity: 80%;
   height: 150px;
   display: flex;
   flex-direction: column;
 }
 
-footer > section > div:nth-child(1) {
+footer > section > section > div:nth-child(1) {
   display: flex;
   height: 50%;
   justify-content: center;
   align-items: center;
 }
 
-footer > section > div:nth-child(1) > div {
+footer > section> section > div:nth-child(1) > div {
   height: 30px;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 1.2rem;
 }
 
-footer > section > div:nth-child(1) > div:nth-child(2) {
+footer > section > section> div:nth-child(1) > div:nth-child(2) {
   border-left: 2px solid white;
   padding-left: 20px;
   margin-left: 20px;
 }
 
-footer > section > div:nth-child(1) > div:nth-child(3) {
+footer > section > section > div:nth-child(1) > div:nth-child(3) {
   border-left: 2px solid white;
   padding-left: 20px;
   margin-left: 20px;
 }
 
-footer > section > div > div > a {
+footer > section > section > div > div > a {
   text-decoration: none;
 }
 
-footer > section > div:nth-child(2) {
+footer > section > section > div:nth-child(2) {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1002,7 +1008,7 @@ footer > section > div:nth-child(2) {
   padding: 0px 10px;
 }
 
-footer > section > div:nth-child(2) > div {
+footer > section > section > div:nth-child(2) > div {
   font-family: "Open Sans", sans-serif;
   font-size: 0.7rem;
 }

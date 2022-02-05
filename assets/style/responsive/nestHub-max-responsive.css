@@ -1,0 +1,5 @@
+@media screen and (min-width:965px) and (max-width:1280px){
+    .box > div:nth-child(2) {
+        min-width: 200px;
+      }
+}
