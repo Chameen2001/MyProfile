@@ -268,7 +268,7 @@ body {
   bottom: 0;
   width: 239px;
   height: 303px;
-  background-image: url("../images/Screenshot-20220106230848-239x303.png");
+  background-image: url("../images/minejpg.jpg");
 }
 
 #about-photo::after {
@@ -360,28 +360,28 @@ body {
 }
 
 #projects-container > section:nth-child(1) > section > div:nth-child(2) {
-  background-image: url("../images/blueOcean.png");
+  background-image: url("../images/blueOcean.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 #projects-container > section:nth-child(2) > section > div:nth-child(2) {
-  background-image: url("../images/carParking.png");
+  background-image: url("../images/carParking.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 #projects-container > section:nth-child(3) > section > div:nth-child(2) {
-  background-image: url("../images/orel.png");
+  background-image: url("../images/orel.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 #projects-container > section:nth-child(4) > section > div:nth-child(2) {
-  background-image: url("../images/retail.png");
+  background-image: url("../images/retail.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -813,7 +813,7 @@ body {
 }
 
 #blender-image {
-  background-image: url("../images/my-skill-images/KEY0.CC-blender-icônes-d-ordinateur-logiciels-d-ordinateur-blender.png");
+  background-image: url("../images/my-skill-images/blender.png");
 }
 
 /*-----------------------------Contact-----------------------------------*/
