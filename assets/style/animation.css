@@ -105,9 +105,9 @@
   }
 
   100% {
-    top: 0;
-    left: 0;
-    font-size: 25px;
+    left: 10px;
+    top: 20px;
+    font-size: 40px;
   }
 }
 
