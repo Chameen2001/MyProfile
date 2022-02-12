@@ -385,6 +385,7 @@
                   placeholder="Customer ID"
                 />
               </div>
+              <div id="error" style="color: red"></div>
 
               <div class="mb-3">
                 <input
@@ -481,7 +482,6 @@
 
       //save function
       function save() {
-
         // Get Value From Text Fields
         let cusId = $("#txtCusId").val();
         let cusName = $("#txtCusName").val();
@@ -510,27 +510,28 @@
 
         // Row Click Function
         $("#tblBody>tr").click(function () {
-          console.log(this);
 
           // Add Data To Text Field
           txtCusId.val($(this).children(":eq(0)").text());
           txtCusName.val($(this).children(":eq(1)").text());
           txtCusAddress.val($(this).children(":eq(2)").text());
           txtCusTel.val($(this).children(":eq(3)").text());
+        });
+
+        $("#tblBody>tr").on("dblclick", function () {
+          $(this).remove();
         });
       }
 
       // Row Click Function
       $("#tblBody>tr").click(function () {
-          console.log(this);
 
-          // Add Data To Text Field
-          txtCusId.val($(this).children(":eq(0)").text());
-          txtCusName.val($(this).children(":eq(1)").text());
-          txtCusAddress.val($(this).children(":eq(2)").text());
-          txtCusTel.val($(this).children(":eq(3)").text());
-        });
-
+        // Add Data To Text Field
+        txtCusId.val($(this).children(":eq(0)").text());
+        txtCusName.val($(this).children(":eq(1)").text());
+        txtCusAddress.val($(this).children(":eq(2)").text());
+        txtCusTel.val($(this).children(":eq(3)").text());
+      });
 
       //Add Or Update Function
       $("#btnSaveOrUpdate").click(save);
@@ -540,29 +541,93 @@
       let txtCusAddress = $("#txtCusAddress");
       let txtCusTel = $("#txtCusTel");
 
-      $("#txtCusId").on("keydown", function (event) {
-        if (event.key == "Enter") {
-          $("#txtCusName").focus();
-        }
+      
+
+      $("#txtCusId").on("keyup", function (event) {
+        checkCollision(
+          /^(C00-)[0-9]{3}$/,
+          /^[A-Z][A-z]+(\s[A-Z][A-z]+)?$/,
+          "#txtCusId",
+          "#txtCusName"
+        );
       });
 
-      $("#txtCusName").on("keydown", function (event) {
-        if (event.key == "Enter") {
-          $("#txtCusAddress").focus();
-        }
+      $("#txtCusName").on("keyup", function (event) {
+        checkCollision(
+          /^[A-Z][A-z]+(\s[A-Z][A-z]+)?$/,
+          /[A-z]|[0-9]/,
+          "#txtCusName",
+          "#txtCusAddress"
+        );
       });
 
-      $("#txtCusAddress").on("keydown", function (event) {
-        if (event.key == "Enter") {
-          $("#txtCusTel").focus();
-        }
+      $("#txtCusAddress").on("keyup", function (event) {
+        checkCollision(
+          /[A-z]|[0-9]/,
+          /[0-9]{10}/,
+          "#txtCusAddress",
+          "#txtCusTel"
+        );
       });
 
-      $("#txtCusTel").on("keydown", function (event) {
-        if (event.key == "Enter") {
-          save();
-        }
+
+      $("#txtCusTel").on("keyup", function (event) {
+        checkCollision(/[0-9]{10}/,0,"#txtCusTel",0);
       });
+
+
+      function checkCollision(regExPara, nextReg, thisField, nextField) {
+        var regEx = regExPara;
+        if (regEx.test($(thisField).val())) {
+          $(thisField).css("border-color", "green");
+          if (nextField != 0) {
+            checkNext(nextReg, nextField);
+            $("#error").text("");
+          }
+        } else {
+          $(thisField).css("border-color", "red");
+        }
+
+        if (event.key == "Enter") {
+          if (nextField != 0) {
+            if ($(thisField).css("border-color") == "rgb(0, 128, 0)") {
+              $(nextField).focus();
+              $("#error").text("");
+            } else {
+              $("#error").text("Invalid");
+            }
+          }else{
+            var ar=["#txtCusId","#txtCusName","#txtCusAddress","#txtCusTel"];
+            let check=0;
+            for (let index = 0; index < ar.length; index++) {
+              if($(ar[index]).css("border-color") != "rgb(0, 128, 0)"){
+                check=1;
+                break;
+              }
+            }
+            if(check==0){
+              save();
+              for (let index = 0; index < ar.length; index++) {
+                $(ar[index]).css("border-color", "red"); 
+              }
+            }else{
+              alert("Fill All Details");
+            }
+            
+          }
+        }
+      }
+
+      function checkNext(nextReg, nextField) {
+        if (nextReg.test($(nextField).val())) {
+          $(nextField).css("border-color", "green");
+
+          $("#error").text("");
+        } else {
+          $(nextField).css("border-color", "red");
+  
+        }
+      }
     </script>
   </body>
 </html>

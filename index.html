@@ -51,6 +51,12 @@
   </head>
 
   <body>
+    <div class="trail">
+      <div class="pointer"></div>
+      <div class="pointer pointer1"></div>
+      <div class="pointer pointer2"></div>
+    </div>
+
     <ul class="logo">
       <li>C</li>
       <li>D</li>
@@ -566,6 +572,11 @@
       // $("footer").css("display","none");
 
       // $("#about").css("anim","none")
+
+      $("html").on("mousemove",function(event){
+        $(".pointer").css("left",(event.pageX)-10);
+        $(".pointer").css("top",(event.pageY)-5);
+      })
 
     </script>
 
