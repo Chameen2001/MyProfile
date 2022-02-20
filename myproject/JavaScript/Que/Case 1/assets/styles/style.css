@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body>section{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 500px;
+    width: 100vw;
+}
+
+body>section>section{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+body>section>section>ul{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    height: 100%;
+}
+body>section>section>ul>li{
+    position: relative;
+    flex-basis: 250px;
+    height: 100%;
+    background-image: url("../images/—Pngtree—vector\ walking\ icon_3782840.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+body>section>section>ul>li>span{
+    position: absolute;
+    right: 10px;
+    font-size: 30px;
+}
+
+body>section>section>ul>li:last-child{
+    flex-grow: 1;
+    background-image: url("../images/house.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

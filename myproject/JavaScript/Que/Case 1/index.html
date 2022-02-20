@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+    <section>
+        <section>
+            <ul><li><span>A</span></li>
+                <li><span>B</span></li>
+                <li><span>C</span></li>
+                <li><span>D</span></li>
+                <li><span>E</span></li>
+                <li><span>F</span></li>
+                <li></li>
+            </ul>
+        </section>
+    </section>
+
+    <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+    <script>
+        
+        function looop(){
+            var ar = $("ul").children();
+            let temp = $(ar[5]).children().text();
+            $(ar[5]).children().text($(ar[4]).children().text())
+            $(ar[4]).children().text($(ar[3]).children().text())
+            $(ar[3]).children().text($(ar[2]).children().text())
+            $(ar[2]).children().text($(ar[1]).children().text())
+            $(ar[1]).children().text($(ar[0]).children().text())
+            $(ar[0]).children().text(temp)
+
+        }
+
+        setInterval(looop,1000)
+        
+        
+    </script>
+
+</body>
+</html>

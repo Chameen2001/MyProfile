@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -480,6 +481,8 @@
         $("#add-customer-section").css("display", "block");
       });
 
+      $("#btnSaveOrUpdate").attr("disabled", true);
+
       //save function
       function save() {
         // Get Value From Text Fields
@@ -510,7 +513,6 @@
 
         // Row Click Function
         $("#tblBody>tr").click(function () {
-
           // Add Data To Text Field
           txtCusId.val($(this).children(":eq(0)").text());
           txtCusName.val($(this).children(":eq(1)").text());
@@ -518,14 +520,19 @@
           txtCusTel.val($(this).children(":eq(3)").text());
         });
 
-        $("#tblBody>tr").on("dblclick", function () {
-          $(this).remove();
+        // Delete A Row
+        $("#tblBody>tr>td:nth-child(5)").on("click", function () {
+          $(this).parent().remove();
         });
       }
 
+      //Delete A Row
+      $("#tblBody>tr>td:nth-child(5)").on("click", function () {
+        $(this).parent().remove();
+      });
+
       // Row Click Function
       $("#tblBody>tr").click(function () {
-
         // Add Data To Text Field
         txtCusId.val($(this).children(":eq(0)").text());
         txtCusName.val($(this).children(":eq(1)").text());
@@ -540,8 +547,6 @@
       let txtCusName = $("#txtCusName");
       let txtCusAddress = $("#txtCusAddress");
       let txtCusTel = $("#txtCusTel");
-
-      
 
       $("#txtCusId").on("keyup", function (event) {
         checkCollision(
@@ -570,23 +575,34 @@
         );
       });
 
-
+      
       $("#txtCusTel").on("keyup", function (event) {
-        checkCollision(/[0-9]{10}/,0,"#txtCusTel",0);
+        
+        checkCollision(/[0-9]{10}/, 0, "#txtCusTel", 0);
+        
       });
 
+      
 
       function checkCollision(regExPara, nextReg, thisField, nextField) {
         var regEx = regExPara;
+        
         if (regEx.test($(thisField).val())) {
+          console.log("True");
           $(thisField).css("border-color", "green");
           if (nextField != 0) {
             checkNext(nextReg, nextField);
             $("#error").text("");
           }
         } else {
+          console.log("False");
           $(thisField).css("border-color", "red");
+          $("#btnSaveOrUpdate").attr("disabled", true);
+          
         }
+
+
+
 
         if (event.key == "Enter") {
           if (nextField != 0) {
@@ -596,26 +612,36 @@
             } else {
               $("#error").text("Invalid");
             }
-          }else{
-            var ar=["#txtCusId","#txtCusName","#txtCusAddress","#txtCusTel"];
-            let check=0;
+          } else {
+            var ar = [
+              "#txtCusId",
+              "#txtCusName",
+              "#txtCusAddress",
+              "#txtCusTel",
+            ];
+            let check = 0;
             for (let index = 0; index < ar.length; index++) {
-              if($(ar[index]).css("border-color") != "rgb(0, 128, 0)"){
-                check=1;
+              if ($(ar[index]).css("border-color") != "rgb(0, 128, 0)") {
+                check = 1;
                 break;
               }
             }
-            if(check==0){
+            if (check == 0) {
               save();
               for (let index = 0; index < ar.length; index++) {
-                $(ar[index]).css("border-color", "red"); 
+                $(ar[index]).css("border-color", "red");
               }
-            }else{
+              $("#btnSaveOrUpdate").attr("disabled", true);
+            } else {
               alert("Fill All Details");
             }
-            
           }
         }
+        
+        setTimeout(function(){
+          checkButtonDisable();
+          },150);
+        
       }
 
       function checkNext(nextReg, nextField) {
@@ -625,9 +651,28 @@
           $("#error").text("");
         } else {
           $(nextField).css("border-color", "red");
-  
         }
       }
+
+      function checkButtonDisable() {
+        
+        var ar = ["#txtCusId", "#txtCusName", "#txtCusAddress", "#txtCusTel"];
+        var check = false;
+        for (let index = 0; index < ar.length; index++) {
+          
+           console.log("called "+$("#txtCusTel").css("border-color"));
+          if ($(ar[index]).css("border-color") != "rgb(0, 128, 0)") {
+            check = true;
+            break;
+          }
+        }
+        if(check==false){
+          $("#btnSaveOrUpdate").attr("disabled", false);
+        }
+      }
+      
+      
+
     </script>
   </body>
 </html>
