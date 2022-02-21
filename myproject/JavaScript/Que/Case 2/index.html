@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+</head>
+
+<body>
+    <h1>Java Script Queue</h1>
+    <section>
+        <ul>
+            <li></li>
+        </ul>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul>
+            <li></li>
+        </ul>
+    </section>
+
+    <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+    <script>
+        var ar= [];
+        ar[0]=$("section").children(":nth-child(1)").children();
+        ar[1]=$("section").children(":nth-child(2)").children(":nth-child(1)");
+        ar[2]=$("section").children(":nth-child(2)").children(":nth-child(2)");
+        ar[3]=$("section").children(":nth-child(2)").children(":nth-child(3)");
+        ar[4]=$("section").children(":nth-child(2)").children(":nth-child(4)");
+        ar[5]=$("section").children(":nth-child(3)").children();
+
+        function looper(){
+            let temp=ar[5].css("background-color");
+            ar[5].css("background-color",ar[4].css("background-color"));
+            ar[4].css("background-color",ar[3].css("background-color"));
+            ar[3].css("background-color",ar[2].css("background-color"));
+            ar[2].css("background-color",ar[1].css("background-color"));
+            ar[1].css("background-color",ar[0].css("background-color"));
+            ar[0].css("background-color",temp);
+        }
+
+        setInterval(looper,500);
+    </script>
+</body>
+
+</html>
