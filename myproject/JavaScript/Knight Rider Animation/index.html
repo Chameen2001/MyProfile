@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <h2>JavaScript Knight Rider</h2>
+      <section>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+      <section>
+        <button id="btnStart">Start</button>
+        <button id="btnStop">Stop</button>
+      </section>
+    </section>
+
+    <script src="assets/JQuery/jquery-3.6.0.min.js"></script>
+    <script>
+        var ar = $("body").children("section").children(":nth-child(2)").children().children();
+        var color = ["#ff1100","#ff4538","#ff6b61","#ff968f","#ffb3ad","#ffd4d1","#ffffff"];
+
+        var  x = 1;
+
+        let timer1;
+        let timer2;
+
+        function animat1(){
+            for (let index = 0; index < x; index++) {
+
+                $(ar[index]).css("background-color",color[color.length-((color.length-(x-index))+1)]);
+                
+            }
+
+            x++;
+            if(x==14){
+                x=1;
+                clearInterval(timer1);
+                timer2=setInterval(animat2,50);
+            }
+        }
+
+        timer1=setInterval(animat1,50);
+
+        var y = 5;
+
+        function animat2(){
+            for (let index = 6; index >= y; index--) {
+
+                $(ar[index]).css("background-color",color[index-y]);
+                
+            }
+
+            y--;
+            if(y==-7){
+                y=6;
+                clearInterval(timer2);
+                timer1=setInterval(animat1,50);
+            }
+        }
+
+        $("#btnStart").on("click",function(){
+            clearInterval(timer1);
+            clearInterval(timer2);
+            timer1=setInterval(animat1,50);
+        });
+
+        $("#btnStop").on("click",function(){
+            clearInterval(timer1);
+            clearInterval(timer2);
+        });
+    </script>
+  </body>
+</html>
