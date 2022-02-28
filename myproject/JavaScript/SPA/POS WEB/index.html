@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -449,7 +448,7 @@
               </thead>
               <tbody id="tblBody">
                 <tr>
-                  <th scope="row">C001</th>
+                  <th scope="row">C00-001</th>
                   <td>Chameen</td>
                   <td>Gampaha</td>
                   <td>0767047467</td>
@@ -467,6 +466,9 @@
     </section>
 
     <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="db/db.js"></script>
+    <script src="model/customer.js"></script>
+    <script src="controller/customerController.js"></script>
 
     <script>
       $("#add-customer-section").css("display", "none");
@@ -480,199 +482,6 @@
         $("#place-order-section").css("display", "none");
         $("#add-customer-section").css("display", "block");
       });
-
-      $("#btnSaveOrUpdate").attr("disabled", true);
-
-      //save function
-      function save() {
-        // Get Value From Text Fields
-        let cusId = $("#txtCusId").val();
-        let cusName = $("#txtCusName").val();
-        let cusAddress = $("#txtCusAddress").val();
-        let cusTel = $("#txtCusTel").val();
-
-        let newRaw = `<tr><th scope="row">${cusId}</th><td>${cusName}</td><td>${cusAddress}</td><td>${cusTel}</td><td><button type="button" class="btn btn-danger ms-3">Delete</button></td></tr>`;
-
-        // Add New Row
-
-        $("#tblBody").append(newRaw);
-
-        let txtCusId = $("#txtCusId");
-        let txtCusName = $("#txtCusName");
-        let txtCusAddress = $("#txtCusAddress");
-        let txtCusTel = $("#txtCusTel");
-
-        // clear Text Field After Adding Row
-
-        txtCusId.val("");
-        txtCusName.val("");
-        txtCusAddress.val("");
-        txtCusTel.val("");
-
-        $("#tblBody>tr").off();
-
-        // Row Click Function
-        $("#tblBody>tr").click(function () {
-          // Add Data To Text Field
-          txtCusId.val($(this).children(":eq(0)").text());
-          txtCusName.val($(this).children(":eq(1)").text());
-          txtCusAddress.val($(this).children(":eq(2)").text());
-          txtCusTel.val($(this).children(":eq(3)").text());
-        });
-
-        // Delete A Row
-        $("#tblBody>tr>td:nth-child(5)").on("click", function () {
-          $(this).parent().remove();
-        });
-      }
-
-      //Delete A Row
-      $("#tblBody>tr>td:nth-child(5)").on("click", function () {
-        $(this).parent().remove();
-      });
-
-      // Row Click Function
-      $("#tblBody>tr").click(function () {
-        // Add Data To Text Field
-        txtCusId.val($(this).children(":eq(0)").text());
-        txtCusName.val($(this).children(":eq(1)").text());
-        txtCusAddress.val($(this).children(":eq(2)").text());
-        txtCusTel.val($(this).children(":eq(3)").text());
-      });
-
-      //Add Or Update Function
-      $("#btnSaveOrUpdate").click(save);
-
-      let txtCusId = $("#txtCusId");
-      let txtCusName = $("#txtCusName");
-      let txtCusAddress = $("#txtCusAddress");
-      let txtCusTel = $("#txtCusTel");
-
-      $("#txtCusId").on("keyup", function (event) {
-        checkCollision(
-          /^(C00-)[0-9]{3}$/,
-          /^[A-Z][A-z]+(\s[A-Z][A-z]+)?$/,
-          "#txtCusId",
-          "#txtCusName"
-        );
-      });
-
-      $("#txtCusName").on("keyup", function (event) {
-        checkCollision(
-          /^[A-Z][A-z]+(\s[A-Z][A-z]+)?$/,
-          /[A-z]|[0-9]/,
-          "#txtCusName",
-          "#txtCusAddress"
-        );
-      });
-
-      $("#txtCusAddress").on("keyup", function (event) {
-        checkCollision(
-          /[A-z]|[0-9]/,
-          /[0-9]{10}/,
-          "#txtCusAddress",
-          "#txtCusTel"
-        );
-      });
-
-      
-      $("#txtCusTel").on("keyup", function (event) {
-        
-        checkCollision(/[0-9]{10}/, 0, "#txtCusTel", 0);
-        
-      });
-
-      
-
-      function checkCollision(regExPara, nextReg, thisField, nextField) {
-        var regEx = regExPara;
-        
-        if (regEx.test($(thisField).val())) {
-          console.log("True");
-          $(thisField).css("border-color", "green");
-          if (nextField != 0) {
-            checkNext(nextReg, nextField);
-            $("#error").text("");
-          }
-        } else {
-          console.log("False");
-          $(thisField).css("border-color", "red");
-          $("#btnSaveOrUpdate").attr("disabled", true);
-          
-        }
-
-
-
-
-        if (event.key == "Enter") {
-          if (nextField != 0) {
-            if ($(thisField).css("border-color") == "rgb(0, 128, 0)") {
-              $(nextField).focus();
-              $("#error").text("");
-            } else {
-              $("#error").text("Invalid");
-            }
-          } else {
-            var ar = [
-              "#txtCusId",
-              "#txtCusName",
-              "#txtCusAddress",
-              "#txtCusTel",
-            ];
-            let check = 0;
-            for (let index = 0; index < ar.length; index++) {
-              if ($(ar[index]).css("border-color") != "rgb(0, 128, 0)") {
-                check = 1;
-                break;
-              }
-            }
-            if (check == 0) {
-              save();
-              for (let index = 0; index < ar.length; index++) {
-                $(ar[index]).css("border-color", "red");
-              }
-              $("#btnSaveOrUpdate").attr("disabled", true);
-            } else {
-              alert("Fill All Details");
-            }
-          }
-        }
-        
-        setTimeout(function(){
-          checkButtonDisable();
-          },150);
-        
-      }
-
-      function checkNext(nextReg, nextField) {
-        if (nextReg.test($(nextField).val())) {
-          $(nextField).css("border-color", "green");
-
-          $("#error").text("");
-        } else {
-          $(nextField).css("border-color", "red");
-        }
-      }
-
-      function checkButtonDisable() {
-        
-        var ar = ["#txtCusId", "#txtCusName", "#txtCusAddress", "#txtCusTel"];
-        var check = false;
-        for (let index = 0; index < ar.length; index++) {
-          
-           console.log("called "+$("#txtCusTel").css("border-color"));
-          if ($(ar[index]).css("border-color") != "rgb(0, 128, 0)") {
-            check = true;
-            break;
-          }
-        }
-        if(check==false){
-          $("#btnSaveOrUpdate").attr("disabled", false);
-        }
-      }
-      
-      
-
     </script>
   </body>
 </html>
