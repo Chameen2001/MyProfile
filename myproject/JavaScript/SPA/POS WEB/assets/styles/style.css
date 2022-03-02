@@ -61,7 +61,7 @@
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
-#place-order-section, #add-customer-section{
+#place-order-section, #add-customer-section, #add-item-section{
     margin-left: 100px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
