@@ -13,8 +13,6 @@ function save() {
   if ($("#btnSaveOrUpdate").text() == "Save") {
     var customer = new Customer(cusId, cusName, cusAddress, cusTel);
     customers.push(customer);
-
-    refreshTable();
   } else {
     for (let index = 0; index < customers.length; index++) {
       if (customers[index].getCID() == cusId) {
@@ -24,8 +22,9 @@ function save() {
         break;
       }
     }
-    refreshTable();
   }
+  refreshTable();
+  refresh_customer_cmb();
 
   let txtCusId = $("#txtCusId");
   let txtCusName = $("#txtCusName");

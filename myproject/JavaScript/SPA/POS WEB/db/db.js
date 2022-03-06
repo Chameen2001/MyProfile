@@ -1,3 +1,4 @@
 var customers = new Array();
 var items = new Array();
 var orders = new Array();
+var cart_ar = new Array();

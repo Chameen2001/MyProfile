@@ -25,6 +25,7 @@ function item_save() {
   }
 
   refresh_item_table();
+  refresh_item_cmb();
 
   let txt_item_id = $("#txtItmId");
   let txt_item_name = $("#txtItmName");

@@ -83,7 +83,7 @@
                         <label for="disabledSelect" class="form-label"
                           >Select Customer</label
                         >
-                        <select id="disabledSelect" class="form-select">
+                        <select id="customer_cmb" class="form-select">
                           <option>None</option>
                         </select>
                       </div>
@@ -95,7 +95,7 @@
                         <label for="disabledSelect" class="form-label"
                           >Select Item</label
                         >
-                        <select id="disabledSelect" class="form-select">
+                        <select id="item_cmb" class="form-select">
                           <option>None</option>
                         </select>
                       </div>
@@ -110,10 +110,11 @@
                         >Name</label
                       >
                       <input
-                        type="email"
+                        type="text"
                         class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
+                        id="txt_ph_cust_name"
+                        readonly
+                        
                       />
                     </div>
                   </section>
@@ -126,8 +127,8 @@
                       <input
                         type="email"
                         class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
+                        id="txt_ph_cust_address"
+                        readonly
                       />
                       <div id="emailHelp" class="form-text">
                         We'll never share your email with anyone else.
@@ -154,8 +155,8 @@
                       <input
                         type="email"
                         class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
+                        id="txt_ph_item_name"
+                        readonly
                       />
                     </div>
                   </section>
@@ -167,8 +168,8 @@
                       <input
                         type="email"
                         class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
+                        id="txt_ph_item_stock"
+                        readonly
                       />
                     </div>
                   </section>
@@ -180,8 +181,8 @@
                       <input
                         type="email"
                         class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
+                        id="txt_ph_item_unit_price"
+                        readonly
                       />
                     </div>
                   </section>
@@ -196,34 +197,7 @@
                       <input
                         type="email"
                         class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
-                      />
-                    </div>
-                  </section>
-                  <section class="col">
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label"
-                        >Max Discount</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
-                      />
-                    </div>
-                  </section>
-                  <section class="col">
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label"
-                        >Every Item</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
+                        id="txt_ph_item_discount"
                       />
                     </div>
                   </section>
@@ -238,8 +212,7 @@
                       <input
                         type="email"
                         class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
+                        id="txt_ph_item_qty"
                       />
                     </div>
                   </section>
@@ -247,7 +220,7 @@
                     class="col d-flex justify-content-center align-items-center"
                   >
                     <div class="mb-3">
-                      <button type="button" class="btn btn-primary mt-4 px-5">
+                      <button type="button" id="btn_add_cart" class="btn btn-primary mt-4 px-5">
                         Add To Cart
                       </button>
                     </div>
@@ -267,7 +240,7 @@
               >
                 <section class="row">
                   <section class="col-6 fs-3" id="orderid-col">
-                    Order ID : O001
+                    Order ID : <span id="txt_order_id"></span>
                   </section>
                   <section class="col-6 text-end">
                     <button type="button" class="btn btn-danger">
@@ -289,44 +262,9 @@
                           <th scope="col">Delete</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody id="tbl_cart">
                         <tr>
                           <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                          <td>Rs.1000.00</td>
-                          <td>
-                            <button type="button" class="btn btn-danger">
-                              Delete
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                          <td>Rs.1000.00</td>
-                          <td>
-                            <button type="button" class="btn btn-danger">
-                              Delete
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td colspan="2">Larry the Bird</td>
-                          <td>@twitter</td>
-                          <td>Rs.1000.00</td>
-                          <td>
-                            <button type="button" class="btn btn-danger">
-                              Delete
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row">4</th>
                           <td>Mark</td>
                           <td>Otto</td>
                           <td>@mdo</td>
@@ -348,12 +286,19 @@
               <section class="border border-3 container-fluid" id="col-2">
                 <section class="row">
                   <section class="col fs-4">Sub Total :</section>
-                  <section class="col text-end fs-4">Rs.52,245.00</section>
+                  <section class="col text-end fs-4" id="lbl_sub_total">Rs.52,245.00</section>
                 </section>
+
+                <section class="row">
+                  <section class="col fs-5">Discount :</section>
+                  <section class="col text-end fs-5" id="lbl_discount">Rs.2,245.00</section>
+                </section>
+
+                <hr>
 
                 <section class="row mt-3">
                   <section class="col fs-3">Total :</section>
-                  <section class="col text-end fs-3">Rs.52,245.00</section>
+                  <section class="col text-end fs-3" id="lbl_total">Rs.52,245.00</section>
                 </section>
 
                 <section class="row p-3">
@@ -497,10 +442,10 @@
 
               <div class="mb-3">
                 <input
-                type="text"
-                class="form-control txtCusField"
-                id="txtItmQty"
-                placeholder="Item Quantity"
+                  type="text"
+                  class="form-control txtCusField"
+                  id="txtItmQty"
+                  placeholder="Item Quantity"
                 />
               </div>
 
@@ -569,8 +514,16 @@
     <script src="controller/customerController.js"></script>
     <script src="controller/itemController.js"></script>
     <script src="model/item.js"></script>
+    <script src="controller/placeOrderController.js"></script>
 
     <script>
+      customers.push(
+        new Customer("C00-001", "Chameen", "Gampaha", "0767047467")
+      );
+      items.push(new Item("I001", "Lux", 30, 75));
+      refresh_customer_cmb();
+      refresh_item_cmb();
+      
       $("#add-customer-section").css("display", "none");
       $("#add-item-section").css("display", "none");
 
