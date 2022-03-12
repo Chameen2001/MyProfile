@@ -1,39 +1,84 @@
 var refresh_customer_cmb = function () {
-  $("#customer_cmb").empty();
-  $("#customer_cmb").append("<option>None</option>");
+  
+  $("#cust-list").empty();
+  $("#cust-list").append(`<li class="cus-option"><img src="" alt=""/><p>None</p></li>`);
   for (let index = 0; index < customers.length; index++) {
-    var raw =
-      "<option>" +
-      customers[index].getName() +
-      " (" +
-      customers[index].getCID() +
-      ")" +
-      "</option>";
-    $("#customer_cmb").append(raw);
+    console.log("callded");
+    var raw =`<li class="cus-option">
+    <img
+      src="https://w7.pngwing.com/pngs/419/473/png-transparent-computer-icons-user-profile-login-user-heroes-sphere-black-thumbnail.png"
+      alt=""
+    />
+    <p>${customers[index].getName()} (${customers[index].getCID()})</p>
+  </li>`;
+      
+    $("#cust-list").append(raw);
+    var cus_option = $(".cus-option");
+    
+
+    for (const iterator of cus_option) {
+      $(iterator).off();
+      $(iterator).on("click", function () {
+        $("#selectText").text($(this).text());
+        $("#cust-list").toggleClass("cus-hide");
+        $("#arrowIcn").toggleClass("rotate");
+        let o = $(this);
+        set_customer_detail(cus_option.index(o)-1);
+      });
+    }
   }
 };
+
+
+
 
 var refresh_item_cmb = function () {
-  $("#item_cmb").empty();
-  $("#item_cmb").append("<option>None</option>");
+  $("#item-list").empty();
+  $("#item-list").append(`<li class="item-option">
+  <img
+    src=""
+    alt=""
+  />
+  <p>None</p>
+</li>`);
   for (let index = 0; index < items.length; index++) {
-    var raw =
-      "<option>" +
-      items[index].get_item_name() +
-      " (" +
-      items[index].get_item_id() +
-      ")" +
-      "</option>";
-    $("#item_cmb").append(raw);
+    var raw =`<li class="item-option">
+    <img
+      src="${items[index].get_item_image()}"
+      alt=""
+    />
+    <p>${items[index].get_item_name()} (${items[index].get_item_id()})</p>
+    </li>`
+     
+    $("#item-list").append(raw);
+    var item_option = $(".item-option");
+
+    for (const iterator of item_option) {
+      $(iterator).off();
+      $(iterator).on("click", function () {
+        $("#item-selectText").text($(this).text());
+        $("#item-list").toggleClass("item-hide");
+        $("#item-arrowIcn").toggleClass("rotate");
+        var o = $(this);
+        set_item_detail(item_option.index(o)-1)
+        ;
+      });
+    }
   }
 };
-$("#customer_cmb").on("change", function () {
-  set_customer_detail($("#customer_cmb option:selected").index() - 1);
-});
 
-$("#item_cmb").on("change", function () {
-  set_item_detail($("#item_cmb option:selected").index() - 1);
-});
+
+
+
+
+var get_index_number_by_item_id=function(id){
+  for (let index = 0; index < items.length; index++) {
+    if(id==items[index].get_item_id()){
+      return index;
+    }
+  }
+  return undefined;
+}
 
 var set_customer_detail = function (index) {
   try {
@@ -88,12 +133,12 @@ $("#txt_ph_item_qty").on("keyup", function () {
   }
 });
 
-
 //add to cart button
 $("#btn_add_cart").on("click", function () {
   add_to_cart();
 });
 
+//check wheather is exits or no
 var isExist = function (itemId) {
   for (let index = 0; index < cart_ar.length; index++) {
     if (cart_ar[index].itemID == itemId) {
@@ -106,16 +151,25 @@ var isExist = function (itemId) {
   }
   return undefined;
 };
-
+let cart_data;
+// add to cart function
 var add_to_cart = function () {
-  let cart_data = {};
-  let result = isExist($("#item_cmb").val().split("(")[1].split(")")[0]);
+  cart_data = {};
+  
+  let result = isExist($("#item-selectText").text().split("(")[1].split(")")[0]);
 
   if (result != undefined) {
+    let qty=parseInt($("#txt_ph_item_qty").val());
+    let unitPrice=parseInt($("#txt_ph_item_unit_price").val());
+    let dsc=parseInt($("#txt_ph_item_discount").val());
+
     cart_ar[result].qty += parseInt($("#txt_ph_item_qty").val());
+    cart_ar[result].sub_total+= qty*unitPrice;
+    cart_ar[result].discount_in_rs+=(qty*unitPrice*dsc)/100;
+    cart_ar[result].total+=(qty*unitPrice)-(qty*unitPrice*dsc)/100;
   } else {
-    cart_data.itemID = $("#item_cmb").val().split("(")[1].split(")")[0];
-    cart_data.itemName = $("#item_cmb").val().split(" ")[0];
+    cart_data.itemID = $("#item-selectText").text().split("(")[1].split(")")[0];
+    cart_data.itemName = $("#item-selectText").text().split(" ")[0];
     cart_data.qty = parseInt($("#txt_ph_item_qty").val());
     cart_data.discount = parseInt($("#txt_ph_item_discount").val());
     cart_data.unitPrice = parseInt($("#txt_ph_item_unit_price").val());
@@ -127,7 +181,7 @@ var add_to_cart = function () {
   reduce_quantity(
     parseInt($("#txt_ph_item_qty").val()),
     $("#txt_ph_item_stock").val(),
-    $("#item_cmb option:selected").index() - 1
+    get_index_number_by_item_id($("#item-selectText").text().split("(")[1].split(")")[0])
   );
   calculate_total(
     parseInt($("#txt_ph_item_qty").val()),
@@ -135,22 +189,29 @@ var add_to_cart = function () {
     parseInt($("#txt_ph_item_discount").val())
   );
 };
-let sub_total = 0;
-let discount = 0;
-let total = 0;
+
+// calculate dicount sub total and total
+let sub_total = 0.0;
+let discount = 0.0;
+let total = 0.0;
 var calculate_total = function (qty, stk, dsc) {
   sub_total += qty * stk;
   discount += (qty * stk * dsc) / 100;
   total = sub_total - discount;
 
-  $("#lbl_sub_total").text(sub_total);
-  $("#lbl_discount").text(discount);
-  $("#lbl_total").text(total);
+  cart_data.sub_total = qty * stk;
+  cart_data.discount_in_rs = (qty * stk * dsc) / 100;
+  cart_data.total = qty * stk - (qty * stk * dsc) / 100;
+
+  $("#lbl_sub_total").text("Rs. " + sub_total + ".00");
+  $("#lbl_discount").text("Rs. " + discount + ".00");
+  $("#lbl_total").text("Rs. " + total + ".00");
 };
 
 var reduce_quantity = function (qty, stk, index) {
   console.log(qty + " " + stk + " " + index);
   let crt = parseInt(stk) - parseInt(qty);
+  console.log("ss "+crt);
   items[index].set_item_quantity(crt);
   $("#txt_ph_item_stock").val(crt);
 };
@@ -173,6 +234,47 @@ var refresh_cart_table = function () {
 
     $("#tbl_cart").append(raw);
   }
+
+  // cart item delete
+  $("#tbl_cart>tr>td:nth-child(6)").on("click", function () {
+    
+    for (let index = 0; index < cart_ar.length; index++) {
+      if (
+        cart_ar[index].itemID ==
+          $(this).parent().children(":nth-child(1)").text() &&
+        cart_ar[index].discount ==
+          $(this).parent().children(":nth-child(4)").text()
+      ) {
+        sub_total -= cart_ar[index].sub_total;
+        discount -= cart_ar[index].discount_in_rs;
+        total -= cart_ar[index].total;
+
+        console.log("sub "+cart_ar[index].sub_total);
+
+        $("#lbl_sub_total").text("Rs. " + sub_total + ".00");
+        $("#lbl_discount").text("Rs. " + discount + ".00");
+        $("#lbl_total").text("Rs. " + total + ".00");
+
+        cart_ar.splice(index, 1);
+
+        for (let index = 0; index < items.length; index++) {
+          if (
+            items[index].get_item_id() ==
+            $(this).parent().children(":nth-child(1)").text()
+          ) {
+            items[index].set_item_quantity(
+              items[index].get_item_quantity() +
+                parseInt($(this).parent().children(":nth-child(3)").text())
+            );
+            break;
+          }
+        }
+        refresh_cart_table();
+
+        break;
+      }
+    }
+  });
 };
 
 var generate_order_id = function () {
@@ -189,5 +291,66 @@ var generate_order_id = function () {
     return "O001";
   }
 };
+
+$("#btn_crt_clear").on("click", function () {
+  for (let index1 = 0; index1 < cart_ar.length; index1++) {
+    for (let index2 = 0; index2 < items.length; index2++) {
+      if (cart_ar[index1].itemID == items[index2].get_item_id()) {
+        items[index2].set_item_quantity(
+          items[index2].get_item_quantity() + cart_ar[index1].qty
+        );
+        break;
+      }
+    }
+  }
+  $("#tbl_cart").empty();
+  clear_toatl();
+});
+
+var clear_toatl = function () {
+  sub_total = 0;
+  discount = 0;
+  total = 0;
+
+  $("#lbl_sub_total").text("Rs. " + sub_total + ".00");
+  $("#lbl_discount").text("Rs. " + discount + ".00");
+  $("#lbl_total").text("Rs. " + total + ".00");
+};
+
+
+function currentTime() {
+  let date = new Date(); 
+  let hh = date.getHours();
+  let mm = date.getMinutes();
+  let ss = date.getSeconds();
+  let session = "AM";
+
+  if(hh == 0){
+      hh = 12;
+  }
+  if(hh > 12){
+      hh = hh - 12;
+      session = "PM";
+   }
+
+   hh = (hh < 10) ? "0" + hh : hh;
+   mm = (mm < 10) ? "0" + mm : mm;
+   ss = (ss < 10) ? "0" + ss : ss;
+    
+   let time = hh + ":" + mm + ":" + ss + " " + session;
+
+  $("#clock").text(time);
+  setTimeout(currentTime, 1000);
+}
+currentTime();
+currentDate();
+
+function currentDate(){
+  let date = new Date();
+  let today = date.getFullYear()+"-"+date.getMonth()+"-"+date.getDate();
+  console.log(today);
+  $("#date").text(today);
+}
+
 
 $("#txt_order_id").text(generate_order_id());

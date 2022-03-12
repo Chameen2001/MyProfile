@@ -1,8 +1,9 @@
-function Item(id,name,quantity,price){
+function Item(id,name,quantity,price,image){
     var item_id=id;
     var item_name=name;
     var item_quantity=quantity;
     var item_price=price;
+    var item_image=image;
 
     this.get_item_id = function (){
         return item_id;
@@ -35,5 +36,13 @@ function Item(id,name,quantity,price){
 
     this.set_item_price = function (price){
         item_price=price;
+    }
+
+    this.get_item_image = function (){
+        return item_image;
+    }
+
+    this.set_item_image = function (image){
+        item_image=image;
     }
 }

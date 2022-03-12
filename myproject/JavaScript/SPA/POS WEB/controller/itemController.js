@@ -9,9 +9,10 @@ function item_save() {
   let item_name = $("#txtItmName").val();
   let item_quantity = $("#txtItmQty").val();
   let item_price = $("#txtItmPrice").val();
+  let item_image = $("#txtItemImg").val();
 
   if ($("#item_btn_Save_Or_Update").text() == "Save") {
-    var item = new Item(item_id, item_name, item_quantity, item_price);
+    var item = new Item(item_id, item_name, item_quantity, item_price,item_image);
     items.push(item);
   } else {
     for (let index = 0; index < items.length; index++) {
@@ -19,6 +20,7 @@ function item_save() {
         items[index].set_item_name(item_name);
         items[index].set_item_quantity(item_quantity);
         items[index].set_item_price(item_price);
+        items[index].set_item_image(item_image);
         break;
       }
     }
@@ -31,6 +33,7 @@ function item_save() {
   let txt_item_name = $("#txtItmName");
   let txt_item_quantity = $("#txtItmQty");
   let txt_item_price = $("#txtItmPrice");
+  let txt_item_image = $("#txtItemImg");
 
   // clear Text Field After Adding Row
 
@@ -38,6 +41,7 @@ function item_save() {
   txt_item_name.val("");
   txt_item_quantity.val("");
   txt_item_price.val("");
+  txt_item_image.val("");
 }
 
 function refresh_item_table() {
@@ -63,6 +67,7 @@ function refresh_item_table() {
       txt_item_name.val($(this).children(":eq(1)").text());
       txt_item_quantity.val($(this).children(":eq(2)").text());
       txt_item_price.val($(this).children(":eq(3)").text());
+
       change_button_to_update();
     });
 
@@ -86,6 +91,7 @@ let txt_item_id = $("#txtItmId");
 let txt_item_name = $("#txtItmName");
 let txt_item_quantity = $("#txtItmQty");
 let txt_item_price = $("#txtItmPrice");
+let txt_item_image = $("#txtItemImg");
 
 $("#item_tbl_body>tr").click(function () {
   // Add Data To Text Field

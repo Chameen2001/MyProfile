@@ -189,9 +189,8 @@ function checkCollision(regExPara, nextReg, thisField, nextField) {
     }
   }
 
-  setTimeout(function () {
-    checkButtonDisable();
-  }, 150);
+  
+  
 }
 
 function checkNext(nextReg, nextField) {

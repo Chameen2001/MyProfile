@@ -36,12 +36,12 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
+                <a id="date" class="nav-link active" aria-current="page" href="#"
                   >2022-01-20</a
                 >
               </li>
             </ul>
-            09:24:57
+            <span id="clock"  onload="currentTime()">09:24:57</span>
           </div>
         </div>
       </nav>
@@ -83,9 +83,46 @@
                         <label for="disabledSelect" class="form-label"
                           >Select Customer</label
                         >
-                        <select id="customer_cmb" class="form-select">
+                        <!-- <select id="customer_cmb" class="form-select">
                           <option>None</option>
-                        </select>
+                          <option style="background: url(https://ijse.lk/images/logos/ijse.png);">sss</option>
+                          
+                        </select> -->
+
+                        <div class="selector">
+                          <div id="selectField">
+                            <p id="selectText">Select Customer</p>
+                            <img
+                              src="assets/images/arrow.png"
+                              alt=""
+                              id="arrowIcn"
+                            />
+                          </div>
+
+                          <ul id="cust-list" class="cus-hide">
+                            <li class="cus-option">
+                              <img
+                                src="https://ijse.lk/images/logos/ijse.png"
+                                alt=""
+                              />
+                              <p>IJSE</p>
+                            </li>
+                            <li class="cus-option">
+                              <img
+                                src="https://ijse.lk/images/logos/ijse.png"
+                                alt=""
+                              />
+                              <p>IJSE</p>
+                            </li>
+                            <li class="cus-option">
+                              <img
+                                src="https://ijse.lk/images/logos/ijse.png"
+                                alt=""
+                              />
+                              <p>IJSE</p>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </form>
                   </section>
@@ -95,9 +132,44 @@
                         <label for="disabledSelect" class="form-label"
                           >Select Item</label
                         >
-                        <select id="item_cmb" class="form-select">
+                        <!-- <select id="item_cmb" class="form-select">
                           <option>None</option>
-                        </select>
+                        </select> -->
+
+                        <div class="selector">
+                          <div id="item-selectField">
+                            <p id="item-selectText">Select Item</p>
+                            <img
+                              src="assets/images/arrow.png"
+                              alt=""
+                              id="item-arrowIcn"
+                            />
+                          </div>
+
+                          <ul id="item-list" class="item-hide">
+                            <li class="item-option">
+                              <img
+                                src="https://www.ubuy.com.lk/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNjFBNWJuWXFBSEwuX1NMMTAwMF8uanBn.jpg"
+                                alt=""
+                              />
+                              <p>Lux</p>
+                            </li>
+                            <li class="item-option">
+                              <img
+                                src="https://www.jungle.lk/wp-content/uploads/2018/06/dettol-original-handwash-200ml.jpg"
+                                alt=""
+                              />
+                              <p>Detole Hand Wash</p>
+                            </li>
+                            <li class="item-option">
+                              <img
+                                src="data:image/jpeg;base64,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"
+                                alt=""
+                              />
+                              <p>Burborn</p>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </form>
                   </section>
@@ -114,7 +186,6 @@
                         class="form-control"
                         id="txt_ph_cust_name"
                         readonly
-                        
                       />
                     </div>
                   </section>
@@ -220,7 +291,11 @@
                     class="col d-flex justify-content-center align-items-center"
                   >
                     <div class="mb-3">
-                      <button type="button" id="btn_add_cart" class="btn btn-primary mt-4 px-5">
+                      <button
+                        type="button"
+                        id="btn_add_cart"
+                        class="btn btn-primary mt-4 px-5"
+                      >
                         Add To Cart
                       </button>
                     </div>
@@ -243,7 +318,11 @@
                     Order ID : <span id="txt_order_id"></span>
                   </section>
                   <section class="col-6 text-end">
-                    <button type="button" class="btn btn-danger">
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      id="btn_crt_clear"
+                    >
                       Clear All
                     </button>
                   </section>
@@ -286,19 +365,25 @@
               <section class="border border-3 container-fluid" id="col-2">
                 <section class="row">
                   <section class="col fs-4">Sub Total :</section>
-                  <section class="col text-end fs-4" id="lbl_sub_total">Rs.52,245.00</section>
+                  <section class="col text-end fs-4" id="lbl_sub_total">
+                    Rs.52,245.00
+                  </section>
                 </section>
 
                 <section class="row">
                   <section class="col fs-5">Discount :</section>
-                  <section class="col text-end fs-5" id="lbl_discount">Rs.2,245.00</section>
+                  <section class="col text-end fs-5" id="lbl_discount">
+                    Rs.2,245.00
+                  </section>
                 </section>
 
-                <hr>
+                <hr />
 
                 <section class="row mt-3">
                   <section class="col fs-3">Total :</section>
-                  <section class="col text-end fs-3" id="lbl_total">Rs.52,245.00</section>
+                  <section class="col text-end fs-3" id="lbl_total">
+                    Rs.52,245.00
+                  </section>
                 </section>
 
                 <section class="row p-3">
@@ -457,6 +542,15 @@
                   placeholder="Item Price"
                 />
               </div>
+
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control txtCusImg"
+                  id="txtItemImg"
+                  placeholder="Image Link"
+                />
+              </div>
               <button
                 id="item_btn_Save_Or_Update"
                 type="button"
@@ -508,6 +602,48 @@
       </section>
     </section>
 
+    <section id="order-section" class="mt-3 border border-3 bg-white">
+      <section class="container-fluid">
+        <section class="row">
+          <section class="col">
+            <div
+              class="d-flex flex-row justify-content-md-start align-items-start"
+            >
+              <input
+                type="email"
+                class="form-control ms-3"
+                id="cus-search-box"
+                aria-describedby="emailHelp"
+                placeholder="Serach Order By Order ID"
+              />
+              <button type="button" class="btn btn-primary ms-3">Search</button>
+            </div>
+            <table class="table table-hover mt-3">
+              <thead class="bg-danger text-white">
+                <tr>
+                  <th scope="col">Order ID</th>
+                  <th scope="col">Customer ID</th>
+                  <th scope="col">Date And Time</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody id="item_tbl_body">
+                <tr>
+                  <th scope="row">I001</th>
+                  <td>Lux</td>
+                  <td>20</td>
+                  <td>75.00</td>
+                </tr>
+              </tbody>
+          </section>
+        </section>
+      </section>
+    </section>
+
+
+
+
+
     <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
     <script src="db/db.js"></script>
     <script src="model/customer.js"></script>
@@ -517,15 +653,48 @@
     <script src="controller/placeOrderController.js"></script>
 
     <script>
+      var selectField = $("#selectField");
+      var selectText = $("#selectText");
+      var cus_option = $(".cus-option");
+      var item_option = $(".item-option");
+      
+
+      $(selectText).attr("disabled", true);
+
+      $(selectField).on("click", function () {
+        $("#cust-list").toggleClass("cus-hide");
+        $("#arrowIcn").toggleClass("rotate");
+      });
+
+      
+
+      ///////////////////////////////////////////
+
+      
+
+      $("#item-selectText").attr("disabled", true);
+
+      $("#item-selectField").on("click", function () {
+        $("#item-list").toggleClass("item-hide");
+        $("#item-arrowIcn").toggleClass("rotate");
+      });
+
+     
+
       customers.push(
         new Customer("C00-001", "Chameen", "Gampaha", "0767047467")
       );
-      items.push(new Item("I001", "Lux", 30, 75));
-      refresh_customer_cmb();
+      items.push(new Item("I001", "Lux", 30, 75,"https://www.ubuy.com.lk/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNjFBNWJuWXFBSEwuX1NMMTAwMF8uanBn.jpg"));
+
       refresh_item_cmb();
-      
+      refresh_customer_cmb();
+
       $("#add-customer-section").css("display", "none");
       $("#add-item-section").css("display", "none");
+
+      //////////////////////////////////////////////////////////
+      $("#place-order-section").css("display", "none");
+      //////////////////////////////////////////////////////////
 
       $("#btn1").click(function () {
         $("#add-customer-section").css("display", "none");
