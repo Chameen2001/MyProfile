@@ -1,4 +1,4 @@
-function Item(id,custId,date,price){
+function Order(id,custId,date,price){
     var order_id=id;
     var cust_id=custId;
     var date_time=date;
