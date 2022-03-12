@@ -279,7 +279,7 @@ var refresh_cart_table = function () {
 
 var generate_order_id = function () {
   if (orders.length != 0) {
-    let lastID = orders[orders.length - 1];
+    let lastID = parseInt(orders[orders.length - 1].get_order_id().split("O")[1]);
     if (lastID < 9) {
       return "O00" + (lastID + 1);
     } else if (lastID < 99) {
@@ -367,6 +367,7 @@ $("#pay_now").on("click",function(){
   orders.push(order1);
 
   refresh_order_table();
+  console.log(generate_order_id());
   $("#txt_order_id").text(generate_order_id());
 
   
