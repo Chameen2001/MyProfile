@@ -58,12 +58,12 @@
         <a id="btn3" href="#"
           ><li>Manage Items <i class="fa fa-cubes" aria-hidden="true"></i></li
         ></a>
-        <a href=""
+        <a id="btn4" href="#"
           ><li>Modify Order<i class="fas fa-retweet"></i></li
         ></a>
-        <a href=""
+        <!-- <a href=""
           ><li>Remove Order<i class="fas fa-trash-alt"></i></li
-        ></a>
+        ></a> -->
       </ul>
     </section>
 
@@ -387,7 +387,7 @@
                 </section>
 
                 <section class="row p-3">
-                  <button type="button" class="btn btn-success">Pay Now</button>
+                  <button type="button" class="btn btn-success" id="pay_now">Pay Now</button>
                 </section>
               </section>
             </section>
@@ -627,7 +627,7 @@
                   <th scope="col">Total</th>
                 </tr>
               </thead>
-              <tbody id="item_tbl_body">
+              <tbody id="order_tbl_body">
                 <tr>
                   <th scope="row">I001</th>
                   <td>Lux</td>
@@ -651,6 +651,7 @@
     <script src="controller/itemController.js"></script>
     <script src="model/item.js"></script>
     <script src="controller/placeOrderController.js"></script>
+    
 
     <script>
       var selectField = $("#selectField");
@@ -684,7 +685,7 @@
       customers.push(
         new Customer("C00-001", "Chameen", "Gampaha", "0767047467")
       );
-      items.push(new Item("I001", "Lux", 30, 75,"https://www.ubuy.com.lk/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNjFBNWJuWXFBSEwuX1NMMTAwMF8uanBn.jpg"));
+      
 
       refresh_item_cmb();
       refresh_customer_cmb();
@@ -700,16 +701,26 @@
         $("#add-customer-section").css("display", "none");
         $("#add-item-section").css("display", "none");
         $("#place-order-section").css("display", "block");
+        $("#order-section").css("display", "none");
       });
 
       $("#btn2").click(function () {
         $("#place-order-section").css("display", "none");
         $("#add-item-section").css("display", "none");
         $("#add-customer-section").css("display", "block");
+        $("#order-section").css("display", "none");
       });
 
       $("#btn3").click(function () {
         $("#add-item-section").css("display", "block");
+        $("#place-order-section").css("display", "none");
+        $("#add-customer-section").css("display", "none");
+        $("#order-section").css("display", "none");
+      });
+
+      $("#btn4").click(function () {
+        $("#order-section").css("display", "block");
+        $("#add-item-section").css("display", "none");
         $("#place-order-section").css("display", "none");
         $("#add-customer-section").css("display", "none");
       });

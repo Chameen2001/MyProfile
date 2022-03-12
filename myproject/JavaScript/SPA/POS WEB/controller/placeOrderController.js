@@ -352,5 +352,24 @@ function currentDate(){
   $("#date").text(today);
 }
 
+$("#pay_now").on("click",function(){
+
+  
+  txt_order_id;
+  lbl_sub_total;
+
+  let order1 = new Order();
+  order1.set_order_id($("#txt_order_id").text());
+  order1.set_cust_id($("#selectText").text().split("(")[1].split(")")[0]);
+  order1.set_date_time($("#date").text()+"  "+$("#clock").text());
+  order1.set_total_price($("#lbl_sub_total").text());
+
+  orders.push(order1);
+
+  refresh_order_table();
+  $("#txt_order_id").text(generate_order_id());
+
+  
+});
 
 $("#txt_order_id").text(generate_order_id());
