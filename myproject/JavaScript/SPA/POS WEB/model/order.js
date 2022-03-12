@@ -18,7 +18,7 @@ function Order(id,custId,date,price){
     }
 
     this.set_cust_id = function (cid){
-        cust_id=id;
+        cust_id=cid;
     }
 
     
