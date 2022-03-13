@@ -112,7 +112,7 @@
         <!-- hero-image -->
       </div>
 
-      <section id="about" class="sec">
+      <section id="about" class="sec hider">
         <!-- about me section -->
         <section class="about-wrap">
           <div id="about_title">
@@ -151,7 +151,7 @@
         </section>
       </section>
 
-      <section id="my-project" class="sec">
+      <section id="my-project" class="sec hider">
         <section id="my-project-wrap" class="wrap">
           <div id="my-prject-title" class="title">
             <h2>Projects</h2>
@@ -267,7 +267,7 @@
         </section>
       </section>
 
-      <section id="my-assignment" class="sec">
+      <section id="my-assignment" class="sec hider">
         <section id="my-assignment-wrap" class="wrap">
           <div id="my-assignment-title" class="title">
             <h2>Assignment</h2>
@@ -282,6 +282,7 @@
               <span>
                 Basic Rotation
               </span>
+              <a href="myproject/CSS/Animations/Case 1 (Basic Rotation)/index.html"></a>
             </div>
 
             <div id="assignment-2" class="assignment-box">
@@ -291,6 +292,7 @@
               <span>
                 Water Drop
               </span>
+              <a href="myproject/CSS/Animations/Case 2 (Water Drop)/"></a>
             </div>
 
             <div id="assignment-3" class="assignment-box">
@@ -300,6 +302,7 @@
               <span>
                 Slider
               </span>
+              <a href="myproject/CSS/Animations/Case 3 (Slider)/"></a>
             </div>
 
             <div id="assignment-4" class="assignment-box">
@@ -309,6 +312,7 @@
               <span>
                 Car Animation
               </span>
+              <a href="myproject/CSS/Animations/Case 4 (Car Animation)/"></a>
             </div>
 
             <div id="assignment-5" class="assignment-box">
@@ -318,6 +322,7 @@
               <span>
                 Fixed Position Ring
               </span>
+              <a href="myproject/CSS/Layout/case 3(Fixed Postion Ball)/index.html"></a>
             </div>
 
             <div id="assignment-6" class="assignment-box">
@@ -327,6 +332,7 @@
               <span>
                 Sticky Position
               </span>
+              <a href="myproject/CSS/Layout/case 4(Sticky Postion)/"></a>
             </div>
 
             <div id="assignment-7" class="assignment-box">
@@ -336,6 +342,7 @@
               <span>
                 Responsive Web Site
               </span>
+              <a href="myproject/CSS/Layout/case 5(Responsive Web Site)/index.html"></a>
             </div>
 
             <div id="assignment-8" class="assignment-box">
@@ -345,6 +352,7 @@
               <span>
                 Nar Bar Transition
               </span>
+              <a href="myproject/CSS/Transitions/case 1(Nav Bar Transition)/"></a>
             </div>
 
             <div id="assignment-9" class="assignment-box">
@@ -354,13 +362,14 @@
               <span>
                 Rotational Ring
               </span>
+              <a href="myproject/CSS/Transitions/case 2(Rotational Ring)/"></a>
             </div>
           </section>
 
         </section>
       </section>
 
-      <section id="my-education" class="sec">
+      <section id="my-education" class="sec hider">
         <section id="my-education-wrap" class="wrap">
           <div id="my-education-title" class="title">
             <h2>Education</h2>
@@ -468,7 +477,7 @@
         </section>
       </section>
 
-      <section id="my-skill" class="sec">
+      <section id="my-skill" class="sec hider">
         <section id="my-skill-wrap" class="wrap">
           <div id="my-skill-title" class="title">
             <h2>Skills</h2>
@@ -501,7 +510,7 @@
         </section>
       </section>
 
-      <section id="contact" class="sec">
+      <section id="contact" class="sec hider">
         <section id="contact-wrap" class="wrap">
           <div id="contact-title" class="title">
             <h2>Contact Me</h2>
@@ -545,7 +554,7 @@
     </aside>
 
     <footer>
-      <section id="footer-wrap" class="wrap">
+      <section id="footer-wrap" class="wrap hider">
       <section>
         <div>
           <div>Email :<a href="mailto:dilhara1117@gmail.com"> dilhara1117@gmail</a></div>
@@ -563,6 +572,13 @@
     <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
     <script>
 
+      // $(".hider").css("display","none");
+
+      // setTimeout(function(){
+      //   $(".hider").css("display","block");
+      // },5000);
+      
+
       // $("#about").css("display","none");
       // $("#my-project").css("display","none");
       // $("#my-assignment").css("display","none");
@@ -574,9 +590,71 @@
       // $("#about").css("anim","none")
 
       $("html").on("mousemove",function(event){
-        $(".pointer").css("left",(event.pageX)-10);
+        $(".pointer").css("left",(event.pageX)+30);
         $(".pointer").css("top",(event.pageY)-5);
       })
+
+      
+
+      window.addEventListener("scroll",function(){
+
+        let screenPos = window.scrollY;
+
+        let my_skill = document.getElementById("my-skill");
+        let my_skill_Pos = my_skill.offsetTop-900;
+
+
+        let about = document.getElementById("about");
+        let about_pos = about.offsetTop-920;
+        
+        
+        if(screenPos>my_skill_Pos){
+          my_skill.classList.add('my-skill-activator');
+          
+        }else{
+          my_skill.classList.remove('my-skill-activator');
+        }
+
+        
+
+
+        if(screenPos>about_pos){
+          console.log("con "+about_pos);
+        console.log("scr "+screenPos);
+
+          about.classList.add('about_activator');
+          
+        }else{
+          about.classList.remove('about_activator');
+        }
+
+      });
+
+
+      let boxes = $(".assignment-box");
+      
+      for (const box of boxes) {
+        $(box).on("click",function(){
+          window.open($(this).children(":nth-child(3)").attr("href"));
+        });
+      }
+
+// window.addEventListener("scroll",function(){
+
+// let content = document.getElementById("my-skill");
+// let contentPosition = content.getBoundingClientRect().top;
+// let screenPos = window.innerHeight*1.5;
+
+// if(contentPosition < screenPos){
+//   content.classList.add('my-skill-activator');
+//   console.log("con "+contentPosition);
+//   console.log("scr "+screenPos);
+  
+// }else{
+//   content.classList.remove('my-skill-activator');
+// }
+
+// });
 
     </script>
 
