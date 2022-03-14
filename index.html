@@ -572,22 +572,11 @@
     <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
     <script>
 
-      // $(".hider").css("display","none");
+       $(".hider").css("display","none");
 
-      // setTimeout(function(){
-      //   $(".hider").css("display","block");
-      // },5000);
-      
-
-      // $("#about").css("display","none");
-      // $("#my-project").css("display","none");
-      // $("#my-assignment").css("display","none");
-      // $("#my-education").css("display","none");
-      // $("#my-skill").css("display","none");
-      // $("#contact").css("display","none");
-      // $("footer").css("display","none");
-
-      // $("#about").css("anim","none")
+       setTimeout(function(){
+         $(".hider").css("display","block");
+       },5000);
 
       $("html").on("mousemove",function(event){
         $(".pointer").css("left",(event.pageX)+30);
@@ -600,32 +589,67 @@
 
         let screenPos = window.scrollY;
 
-        let my_skill = document.getElementById("my-skill");
-        let my_skill_Pos = my_skill.offsetTop-900;
-
-
+        let home = document.getElementById("main-viewport");
         let about = document.getElementById("about");
-        let about_pos = about.offsetTop-920;
+        let my_project = document.getElementById("my-project");
+        let my_assignment = document.getElementById("my-assignment");
+        let my_education = document.getElementById("my-education");
+        let my_skill = document.getElementById("my-skill");
+        let contact = document.getElementById("contact");
         
         
-        if(screenPos>my_skill_Pos){
-          my_skill.classList.add('my-skill-activator');
+
+        
+
+        let home_l=home.offsetTop+(home.clientHeight/2);
+        let about_l=about.offsetTop+(about.clientHeight/2);
+        let my_project_l=my_project.offsetTop+(my_project.clientHeight/1.5);
+        let my_assignment_l=my_assignment.offsetTop+(my_assignment.clientHeight/2);
+        let my_education_l=my_education.offsetTop+(my_education.clientHeight/2);
+        let my_skill_l=my_skill.offsetTop+(my_skill.clientHeight/4);
+
+
+        if(screenPos>home_l){
+          about.classList.add('activator');
           
         }else{
-          my_skill.classList.remove('my-skill-activator');
+          about.classList.remove('activator');
         }
 
-        
-
-
-        if(screenPos>about_pos){
-          console.log("con "+about_pos);
-        console.log("scr "+screenPos);
-
-          about.classList.add('about_activator');
+        if(screenPos>about_l){
+          my_project.classList.add('activator');
           
         }else{
-          about.classList.remove('about_activator');
+          my_project.classList.remove('activator');
+        }
+
+        if(screenPos>my_project_l){
+          my_assignment.classList.add('activator');
+          
+        }else{
+          my_assignment.classList.remove('activator');
+        }
+
+        if(screenPos>my_assignment_l){
+          my_education.classList.add('activator');
+          
+        }else{
+          my_education.classList.remove('activator');
+        }
+        
+        
+        if(screenPos>my_education_l){
+          my_skill.classList.add('activator');
+          
+        }else{
+          my_skill.classList.remove('activator');
+        }
+
+        if(screenPos>my_skill_l){
+          contact.classList.add('activator');
+          
+        }else{
+          contact.classList.remove('activator');
         }
 
       });
@@ -638,23 +662,6 @@
           window.open($(this).children(":nth-child(3)").attr("href"));
         });
       }
-
-// window.addEventListener("scroll",function(){
-
-// let content = document.getElementById("my-skill");
-// let contentPosition = content.getBoundingClientRect().top;
-// let screenPos = window.innerHeight*1.5;
-
-// if(contentPosition < screenPos){
-//   content.classList.add('my-skill-activator');
-//   console.log("con "+contentPosition);
-//   console.log("scr "+screenPos);
-  
-// }else{
-//   content.classList.remove('my-skill-activator');
-// }
-
-// });
 
     </script>
 

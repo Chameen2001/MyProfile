@@ -236,12 +236,6 @@ body {
   transition-duration: 1500ms;
 }
 
-.about_activator{
-  opacity: 1 !important;
-  transform: scale(1) !important;
-  transition-duration: 1500ms;
-}
-
 .about-wrap {
   position: relative;
   max-width: 75%;
@@ -323,9 +317,9 @@ body {
 #my-project {
   position: relative;
   min-height: 100vh;
-  animation-name: until-animate;
-  animation-duration: 6s;
-  animation-iteration-count: 1;
+  opacity: 0 ;
+  transform: scale(0) ;
+  transition-duration: 1500ms;
 }
 
 #my-project-wrap {
@@ -493,9 +487,9 @@ body {
 #my-education {
   position: relative;
   min-height: 100vh;
-  animation-name: until-animate;
-  animation-duration: 6s;
-  animation-iteration-count: 1;
+  opacity: 0 ;
+  transform: scale(0) ;
+  transition-duration: 1500ms;
   
 }
 
@@ -770,12 +764,6 @@ body {
   
 }
 
-.my-skill-activator{
-  opacity: 1 !important;
-  transform: scale(1) !important;
-  transition-duration: 2000ms;
-}
-
 #my-skill-wrap {
   position: relative;
   box-sizing: border-box;
@@ -868,9 +856,9 @@ body {
 #contact {
   position: relative;
   min-height: 100vh;
-  animation-name: until-animate;
-  animation-duration: 6s;
-  animation-iteration-count: 1;
+  opacity: 0 ;
+  transform: scale(0) ;
+  transition-duration: 1500ms;
 }
 
 #contact-wrap {
@@ -1066,9 +1054,9 @@ footer > section > section > div:nth-child(2) > div {
 #my-assignment{
   position: relative;
   min-height: 100vh;
-  animation-name: until-animate;
-  animation-duration: 6s;
-  animation-iteration-count: 1;
+  opacity: 0 ;
+  transform: scale(0) ;
+  transition-duration: 1500ms;
 }
 
 #my-assignment-wrap{
@@ -1203,4 +1191,10 @@ footer > section > section > div:nth-child(2) > div {
   font-size: 1.5rem;
   position: relative;
   top: 20px;
+}
+
+.activator{
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  transition-duration: 2000ms;
 }
