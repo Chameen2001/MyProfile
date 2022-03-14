@@ -189,7 +189,9 @@ function checkCollision(regExPara, nextReg, thisField, nextField) {
     }
   }
 
-  
+  setTimeout(function () {
+    checkButtonDisable();
+  }, 150);
   
 }
 
@@ -209,9 +211,11 @@ function checkButtonDisable() {
   for (let index = 0; index < ar.length; index++) {
     if ($(ar[index]).css("border-color") != "rgb(0, 128, 0)") {
       check = true;
+      
       break;
     }
   }
+  console.log(check);
   if (check == false) {
     $("#btnSaveOrUpdate").attr("disabled", false);
   }
