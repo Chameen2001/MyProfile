@@ -49,31 +49,41 @@
 }
 
 @keyframes hey-its {
-  from {
+  0% {
     font-size: 5px;
   }
 
-  to {
+  95% {
+    font-size: 5px;
+  }
+  100% {
     font-size: 20px;
   }
 }
 
 @keyframes name {
-  from {
+  0% {
     font-size: 5px;
   }
 
-  to {
+  95% {
+    font-size: 5px;
+  }
+
+  100% {
     font-size: 50px;
   }
 }
 
 @keyframes full-stack {
-  from {
+  0% {
     font-size: 5px;
   }
 
-  to {
+  95% {
+    font-size: 5px;
+  }
+  100% {
     font-size: 15px;
   }
 }
@@ -105,9 +115,13 @@
   }
 
   100% {
-    left: 10px;
-    top: 20px;
-    font-size: 40px;
+    width: 70px;
+  height: 70px;
+
+  left: 10px;
+  top: 20px;
+  margin: 0;
+  font-size: 40px;
   }
 }
 

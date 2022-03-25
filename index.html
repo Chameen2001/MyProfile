@@ -96,6 +96,11 @@
 
     <main>
       <div id="main-viewport" class="sec">
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+        
         <article class="hero-text">
           <div id="heyIts">Hi, It's</div>
           <div id="name">CHAMEEN DILHARA</div>
@@ -107,6 +112,7 @@
         <!-- hero-text -->
 
         <section class="hero-image">
+          <div></div>
           <img src="assets/images/home-bg.19753168.svg" alt="main design" />
         </section>
         <!-- hero-image -->
@@ -569,14 +575,15 @@
     </section>
     </footer>
 
+    <iframe src="https://www.srilankan.com/en_uk/us" frameborder="0"></iframe>
+    
+
     <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
     <script>
 
        $(".hider").css("display","none");
 
-       setTimeout(function(){
-         $(".hider").css("display","block");
-       },5000);
+      
 
       $("html").on("mousemove",function(event){
         $(".pointer").css("left",(event.pageX)+30);
@@ -604,7 +611,7 @@
         let home_l=home.offsetTop+(home.clientHeight/2);
         let about_l=about.offsetTop+(about.clientHeight/2);
         let my_project_l=my_project.offsetTop+(my_project.clientHeight/1.5);
-        let my_assignment_l=my_assignment.offsetTop+(my_assignment.clientHeight/2);
+        let my_assignment_l=my_assignment.offsetTop+(my_assignment.clientHeight/1.5);
         let my_education_l=my_education.offsetTop+(my_education.clientHeight/2);
         let my_skill_l=my_skill.offsetTop+(my_skill.clientHeight/4);
 
@@ -662,6 +669,53 @@
           window.open($(this).children(":nth-child(3)").attr("href"));
         });
       }
+
+      $(document).ready(function(){
+
+        $(".logo").children("li:nth-child(1)").toggleClass("hueCHanger");
+        $(".logo").children("li:nth-child(2)").toggleClass("hueCHanger");
+
+      });
+
+      $(window).on("load",function(){
+
+        $(".logo").children("li:nth-child(1)").css("animation-play-state","paused");
+        $(".logo").children("li:nth-child(2)").css("animation-play-state","paused");
+
+        $(".logo").children("li:nth-child(1)").css("transition","color 500ms");
+         $(".logo").children("li:nth-child(2)").css("transition","color 500ms");
+        
+        $(".logo").children("li:nth-child(1)").removeClass("hueCHanger");
+        $(".logo").children("li:nth-child(2)").removeClass("hueCHanger");
+
+
+        $(".logo").css("animation-play-state","running");
+        $(".left-bar-container").css("animation-play-state","running");
+        $(".hero-text").css("animation-play-state","running");
+        $("#heyIts").css("animation-play-state","running");
+        $("#name").css("animation-play-state","running");
+        $("#fullStack").css("animation-play-state","running");
+        $(".right-side-bar").css("animation-play-state","running");
+        
+
+        setTimeout(function(){
+         $(".hider").css("display","block");
+       },5000);
+        
+      
+        
+        
+        
+        
+        // $(".hero-image").children("div:nth-child(1)").toggleClass("hero-image_activator");
+
+        $(".hero-image").children("div:nth-child(1)").css("animation-play-state","running")
+        
+        
+        
+        
+
+      });
 
     </script>
 
